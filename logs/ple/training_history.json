@@ -1,0 +1,752 @@
+[
+  {
+    "epoch": 1,
+    "time_seconds": 76.34,
+    "train": {
+      "total_loss": 1.0481152920161976,
+      "ctr_loss": 0.6645850924884572,
+      "cvr_loss": 0.3053276836872101,
+      "mask_loss": 0.6868142731049481,
+      "load_balance_loss": 1.008958430851207,
+      "num_batches": 17,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.3036091923713684,
+      "train_ctr_auc": 0.4989068073659624,
+      "train_cvr_auc": 0.5028546880194232,
+      "task_weight_ctr": 0.9966857433319092,
+      "task_weight_cvr": 1.0034542083740234,
+      "log_sigma_ctr": 0.0016598757356405258,
+      "log_sigma_cvr": -0.0017241128953173757
+    },
+    "val": {
+      "val_loss": 0.9540231823921204,
+      "ctr_auc": 0.4862155073859897,
+      "cvr_auc": 0.47729598746810264,
+      "total_auc": 0.4817557474270462,
+      "ctr_logloss": 0.6535060003646419,
+      "cvr_logloss": 0.3016876474423331
+    },
+    "gate_temperatures": [
+      [
+        1.9,
+        1.9
+      ],
+      [
+        1.9,
+        1.9
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.3517726957798004,
+        0.3346349000930786
+      ],
+      "utilization_matrix": [
+        [
+          0.3372385501861572,
+          0.31098872423171997,
+          0.3517726957798004
+        ],
+        [
+          0.3314010202884674,
+          0.3346349000930786,
+          0.33396410942077637
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.4817557474270462,
+      "best_epoch": 0,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "WARMING_UP - Not enough data",
+        "cvr": "WARMING_UP - Not enough data"
+      }
+    },
+    "learning_rate": 0.0009757729755661011,
+    "conflict_detector": {
+      "ema_cos_sim": 0.03036091923713684,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 2,
+    "time_seconds": 125.91,
+    "train": {
+      "total_loss": 0.953181010835311,
+      "ctr_loss": 0.6166085916406968,
+      "cvr_loss": 0.27295123303637786,
+      "mask_loss": 0.637680965311387,
+      "load_balance_loss": 0.15432637973743327,
+      "num_batches": 17,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.0,
+      "train_ctr_auc": 0.5089854605482234,
+      "train_cvr_auc": 0.5217974998428299,
+      "task_weight_ctr": 0.9937976002693176,
+      "task_weight_cvr": 1.0069587230682373,
+      "log_sigma_ctr": 0.0031108714174479246,
+      "log_sigma_cvr": -0.0034672950860112906
+    },
+    "val": {
+      "val_loss": 0.8833492696285248,
+      "ctr_auc": 0.496151469977718,
+      "cvr_auc": 0.5034992096688187,
+      "total_auc": 0.4998253398232683,
+      "ctr_logloss": 0.6149871852554839,
+      "cvr_logloss": 0.27069418562616215
+    },
+    "gate_temperatures": [
+      [
+        1.805,
+        1.805
+      ],
+      [
+        1.805,
+        1.805
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.33524876832962036,
+        0.3390844166278839
+      ],
+      "utilization_matrix": [
+        [
+          0.33524876832962036,
+          0.33450043201446533,
+          0.3302507996559143
+        ],
+        [
+          0.33142954111099243,
+          0.3390844166278839,
+          0.32948604226112366
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.4998253398232683,
+      "best_epoch": 1,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "WARMING_UP - Not enough data",
+        "cvr": "WARMING_UP - Not enough data"
+      }
+    },
+    "learning_rate": 0.000905463412215599,
+    "conflict_detector": {
+      "ema_cos_sim": 0.03036091923713684,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 3,
+    "time_seconds": 254.04,
+    "train": {
+      "total_loss": 0.9211258783059961,
+      "ctr_loss": 0.5927880196010366,
+      "cvr_loss": 0.2662697022452074,
+      "mask_loss": 0.6191901880152085,
+      "load_balance_loss": 0.27814337172928977,
+      "num_batches": 17,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.0,
+      "train_ctr_auc": 0.5271292874448865,
+      "train_cvr_auc": 0.5612239623319739,
+      "task_weight_ctr": 0.9914482235908508,
+      "task_weight_cvr": 1.0102832317352295,
+      "log_sigma_ctr": 0.004294289276003838,
+      "log_sigma_cvr": -0.00511534558609128
+    },
+    "val": {
+      "val_loss": 0.8583700954914093,
+      "ctr_auc": 0.4975354597135263,
+      "cvr_auc": 0.5006673936390518,
+      "total_auc": 0.49910142667628904,
+      "ctr_logloss": 0.5935307531763001,
+      "cvr_logloss": 0.2681508547891134
+    },
+    "gate_temperatures": [
+      [
+        1.7147499999999998,
+        1.7147499999999998
+      ],
+      [
+        1.7147499999999998,
+        1.7147499999999998
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.34134671092033386,
+        0.3438047468662262
+      ],
+      "utilization_matrix": [
+        [
+          0.34134671092033386,
+          0.3375219404697418,
+          0.32113131880760193
+        ],
+        [
+          0.3438047468662262,
+          0.331520140171051,
+          0.32467514276504517
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.4998253398232683,
+      "best_epoch": 1,
+      "patience_counter": 1,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "WARMING_UP - Not enough data",
+        "cvr": "WARMING_UP - Not enough data"
+      }
+    },
+    "learning_rate": 0.0007959536998847742,
+    "conflict_detector": {
+      "ema_cos_sim": 0.03036091923713684,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 4,
+    "time_seconds": 295.11,
+    "train": {
+      "total_loss": 0.9033505916595459,
+      "ctr_loss": 0.5804553452660056,
+      "cvr_loss": 0.2635093725779477,
+      "mask_loss": 0.6040405771311592,
+      "load_balance_loss": 0.2440757015172173,
+      "num_batches": 17,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.0,
+      "train_ctr_auc": 0.5519410465623317,
+      "train_cvr_auc": 0.5981025050100378,
+      "task_weight_ctr": 0.9895607829093933,
+      "task_weight_cvr": 1.0132120847702026,
+      "log_sigma_ctr": 0.005247042514383793,
+      "log_sigma_cvr": -0.006562778260558844
+    },
+    "val": {
+      "val_loss": 0.8563919961452484,
+      "ctr_auc": 0.49904705646380104,
+      "cvr_auc": 0.49764318164421356,
+      "total_auc": 0.4983451190540073,
+      "ctr_logloss": 0.5899270367849058,
+      "cvr_logloss": 0.2705850481676373
+    },
+    "gate_temperatures": [
+      [
+        1.6290124999999998,
+        1.6290124999999998
+      ],
+      [
+        1.6290124999999998,
+        1.6290124999999998
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.3445083200931549,
+        0.3441108167171478
+      ],
+      "utilization_matrix": [
+        [
+          0.3343879282474518,
+          0.3445083200931549,
+          0.3211037516593933
+        ],
+        [
+          0.3441108167171478,
+          0.33231380581855774,
+          0.32357537746429443
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.4998253398232683,
+      "best_epoch": 1,
+      "patience_counter": 2,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "WARMING_UP - Not enough data",
+        "cvr": "WARMING_UP - Not enough data"
+      }
+    },
+    "learning_rate": 0.000657963412215599,
+    "conflict_detector": {
+      "ema_cos_sim": 0.03036091923713684,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 5,
+    "time_seconds": 172.03,
+    "train": {
+      "total_loss": 0.8929766100995681,
+      "ctr_loss": 0.5749038247501149,
+      "cvr_loss": 0.2612205375643337,
+      "mask_loss": 0.5925994515419006,
+      "load_balance_loss": 0.17767290683353648,
+      "num_batches": 17,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.0,
+      "train_ctr_auc": 0.5692163106701704,
+      "train_cvr_auc": 0.6181697468772304,
+      "task_weight_ctr": 0.9880432486534119,
+      "task_weight_cvr": 1.0156909227371216,
+      "log_sigma_ctr": 0.006014401093125343,
+      "log_sigma_cvr": -0.007784571498632431
+    },
+    "val": {
+      "val_loss": 0.8561603426933289,
+      "ctr_auc": 0.4987944614040258,
+      "cvr_auc": 0.4995399507064269,
+      "total_auc": 0.49916720605522635,
+      "ctr_logloss": 0.5905646253201197,
+      "cvr_logloss": 0.2703935286565303
+    },
+    "gate_temperatures": [
+      [
+        1.5475618749999998,
+        1.5475618749999998
+      ],
+      [
+        1.5475618749999998,
+        1.5475618749999998
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.344064325094223,
+        0.3405147194862366
+      ],
+      "utilization_matrix": [
+        [
+          0.32885903120040894,
+          0.344064325094223,
+          0.32707664370536804
+        ],
+        [
+          0.3405147194862366,
+          0.3310430347919464,
+          0.3284422755241394
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.4998253398232683,
+      "best_epoch": 1,
+      "patience_counter": 3,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.002805)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.003863)"
+      }
+    },
+    "learning_rate": 0.000505,
+    "conflict_detector": {
+      "ema_cos_sim": 0.03036091923713684,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 6,
+    "time_seconds": 172.52,
+    "train": {
+      "total_loss": 0.8849634002236759,
+      "ctr_loss": 0.5705609216409571,
+      "cvr_loss": 0.25938161331064563,
+      "mask_loss": 0.5842930499245139,
+      "load_balance_loss": 0.13655202441355763,
+      "num_batches": 17,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.3637133240699768,
+      "train_ctr_auc": 0.5870849787658018,
+      "train_cvr_auc": 0.6396786842777179,
+      "task_weight_ctr": 0.9868592619895935,
+      "task_weight_cvr": 1.017662763595581,
+      "log_sigma_ctr": 0.006613920908421278,
+      "log_sigma_cvr": -0.008754309266805649
+    },
+    "val": {
+      "val_loss": 0.857390820980072,
+      "ctr_auc": 0.5010878204478093,
+      "cvr_auc": 0.5034356790520871,
+      "total_auc": 0.5022617497499482,
+      "ctr_logloss": 0.5914177734339704,
+      "cvr_logloss": 0.2713295160528005
+    },
+    "gate_temperatures": [
+      [
+        1.4701837812499996,
+        1.4701837812499996
+      ],
+      [
+        1.4701837812499996,
+        1.4701837812499996
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.34022942185401917,
+        0.33732956647872925
+      ],
+      "utilization_matrix": [
+        [
+          0.3375111222267151,
+          0.34022942185401917,
+          0.32225948572158813
+        ],
+        [
+          0.3350520133972168,
+          0.33732956647872925,
+          0.32761842012405396
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5022617497499482,
+      "best_epoch": 5,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.001113)",
+        "cvr": "DEGRADING - CVR AUC trending down (slope=-0.000125)"
+      }
+    },
+    "learning_rate": 0.0003520365877844011,
+    "conflict_detector": {
+      "ema_cos_sim": 0.06369615972042084,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 7,
+    "time_seconds": 56.92,
+    "train": {
+      "total_loss": 0.8792730008854586,
+      "ctr_loss": 0.5678550460759331,
+      "cvr_loss": 0.2570750362732831,
+      "mask_loss": 0.5784714958247017,
+      "load_balance_loss": 0.17455173459123163,
+      "num_batches": 17,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.0,
+      "train_ctr_auc": 0.5997297612619594,
+      "train_cvr_auc": 0.6641279809207838,
+      "task_weight_ctr": 0.9859877824783325,
+      "task_weight_cvr": 1.0191386938095093,
+      "log_sigma_ctr": 0.007055661641061306,
+      "log_sigma_cvr": -0.009478938765823841
+    },
+    "val": {
+      "val_loss": 0.8579874038696289,
+      "ctr_auc": 0.5010139474557121,
+      "cvr_auc": 0.4998363410076085,
+      "total_auc": 0.5004251442316603,
+      "ctr_logloss": 0.5920678673581603,
+      "cvr_logloss": 0.27161837690785773
+    },
+    "gate_temperatures": [
+      [
+        1.3966745921874995,
+        1.3966745921874995
+      ],
+      [
+        1.3966745921874995,
+        1.3966745921874995
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.34242942929267883,
+        0.3381164073944092
+      ],
+      "utilization_matrix": [
+        [
+          0.34242942929267883,
+          0.3372195065021515,
+          0.3203510344028473
+        ],
+        [
+          0.33664143085479736,
+          0.3381164073944092,
+          0.32524216175079346
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5022617497499482,
+      "best_epoch": 5,
+      "patience_counter": 1,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000900)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 0.00021404630011522585,
+    "conflict_detector": {
+      "ema_cos_sim": 0.06369615972042084,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 8,
+    "time_seconds": 23.25,
+    "train": {
+      "total_loss": 0.8744943457491258,
+      "ctr_loss": 0.5658747729133157,
+      "cvr_loss": 0.25512514833141775,
+      "mask_loss": 0.575048523790696,
+      "load_balance_loss": 0.15890300536856933,
+      "num_batches": 17,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.0,
+      "train_ctr_auc": 0.6056327197659516,
+      "train_cvr_auc": 0.6760869910586026,
+      "task_weight_ctr": 0.9853875041007996,
+      "task_weight_cvr": 1.0201739072799683,
+      "log_sigma_ctr": 0.007360149174928665,
+      "log_sigma_cvr": -0.009986580349504948
+    },
+    "val": {
+      "val_loss": 0.8590818047523499,
+      "ctr_auc": 0.5026443009108865,
+      "cvr_auc": 0.502069964090382,
+      "total_auc": 0.5023571325006342,
+      "ctr_logloss": 0.5928909743395488,
+      "cvr_logloss": 0.2722093843934545
+    },
+    "gate_temperatures": [
+      [
+        1.3268408625781245,
+        1.3268408625781245
+      ],
+      [
+        1.3268408625781245,
+        1.3268408625781245
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.33934375643730164,
+        0.3404751121997833
+      ],
+      "utilization_matrix": [
+        [
+          0.33934375643730164,
+          0.33857569098472595,
+          0.3220805525779724
+        ],
+        [
+          0.3366619348526001,
+          0.3404751121997833,
+          0.3228629231452942
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5022617497499482,
+      "best_epoch": 5,
+      "patience_counter": 2,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000941)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.000915)"
+      }
+    },
+    "learning_rate": 0.00010453658778440107,
+    "conflict_detector": {
+      "ema_cos_sim": 0.06369615972042084,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 9,
+    "time_seconds": 33.35,
+    "train": {
+      "total_loss": 0.8714248397771049,
+      "ctr_loss": 0.5641745118533864,
+      "cvr_loss": 0.2539549224516925,
+      "mask_loss": 0.5729768942384159,
+      "load_balance_loss": 0.1829492572475882,
+      "num_batches": 17,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.0,
+      "train_ctr_auc": 0.6134701512108168,
+      "train_cvr_auc": 0.6856318585833778,
+      "task_weight_ctr": 0.9849965572357178,
+      "task_weight_cvr": 1.0208408832550049,
+      "log_sigma_ctr": 0.007558558601886034,
+      "log_sigma_cvr": -0.010313316248357296
+    },
+    "val": {
+      "val_loss": 0.8596928715705872,
+      "ctr_auc": 0.5034507176381883,
+      "cvr_auc": 0.5021045000037371,
+      "total_auc": 0.5027776088209627,
+      "ctr_logloss": 0.5933230090456267,
+      "cvr_logloss": 0.2725812064598129
+    },
+    "gate_temperatures": [
+      [
+        1.2604988194492182,
+        1.2604988194492182
+      ],
+      [
+        1.2604988194492182,
+        1.2604988194492182
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.33974596858024597,
+        0.3405631482601166
+      ],
+      "utilization_matrix": [
+        [
+          0.33885321021080017,
+          0.33974596858024597,
+          0.32140085101127625
+        ],
+        [
+          0.3405631482601166,
+          0.3398324251174927,
+          0.31960442662239075
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5027776088209627,
+      "best_epoch": 8,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.001087)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 3.4227024433899005e-05,
+    "conflict_detector": {
+      "ema_cos_sim": 0.06369615972042084,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 10,
+    "time_seconds": 24.99,
+    "train": {
+      "total_loss": 0.8701048984247095,
+      "ctr_loss": 0.5635417068705839,
+      "cvr_loss": 0.25362322435659523,
+      "mask_loss": 0.5722665541312274,
+      "load_balance_loss": 0.16929479644579046,
+      "num_batches": 17,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.0,
+      "train_ctr_auc": 0.6149544958710892,
+      "train_cvr_auc": 0.6847301820346836,
+      "task_weight_ctr": 0.9847319722175598,
+      "task_weight_cvr": 1.0212796926498413,
+      "log_sigma_ctr": 0.007692886050790548,
+      "log_sigma_cvr": -0.01052821520715952
+    },
+    "val": {
+      "val_loss": 0.8597184419631958,
+      "ctr_auc": 0.5034858931032518,
+      "cvr_auc": 0.5015722861150937,
+      "total_auc": 0.5025290896091728,
+      "ctr_logloss": 0.5934181414038722,
+      "cvr_logloss": 0.2726321734266371
+    },
+    "gate_temperatures": [
+      [
+        1.1974738784767571,
+        1.1974738784767571
+      ],
+      [
+        1.1974738784767571,
+        1.1974738784767571
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.3398866057395935,
+        0.34259167313575745
+      ],
+      "utilization_matrix": [
+        [
+          0.3397299647331238,
+          0.3398866057395935,
+          0.3203833997249603
+        ],
+        [
+          0.34259167313575745,
+          0.33903759717941284,
+          0.31837067008018494
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5027776088209627,
+      "best_epoch": 8,
+      "patience_counter": 1,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000723)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 1e-05,
+    "conflict_detector": {
+      "ema_cos_sim": 0.06369615972042084,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  }
+]

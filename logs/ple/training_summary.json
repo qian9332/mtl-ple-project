@@ -1,0 +1,51 @@
+{
+  "model": "PLEModel",
+  "total_epochs": 10,
+  "best_epoch": 9,
+  "best_val_metrics": {
+    "val_loss": 0.8596928715705872,
+    "ctr_auc": 0.5034507176381883,
+    "cvr_auc": 0.5021045000037371,
+    "total_auc": 0.5027776088209627,
+    "ctr_logloss": 0.5933230090456267,
+    "cvr_logloss": 0.2725812064598129
+  },
+  "best_train_metrics": {
+    "total_loss": 0.8714248397771049,
+    "ctr_loss": 0.5641745118533864,
+    "cvr_loss": 0.2539549224516925,
+    "mask_loss": 0.5729768942384159,
+    "load_balance_loss": 0.1829492572475882,
+    "num_batches": 17,
+    "conflict_count": 0,
+    "avg_cos_sim": 0.0,
+    "train_ctr_auc": 0.6134701512108168,
+    "train_cvr_auc": 0.6856318585833778,
+    "task_weight_ctr": 0.9849965572357178,
+    "task_weight_cvr": 1.0208408832550049,
+    "log_sigma_ctr": 0.007558558601886034,
+    "log_sigma_cvr": -0.010313316248357296
+  },
+  "final_gate_temperatures": [
+    [
+      1.1974738784767571,
+      1.1974738784767571
+    ],
+    [
+      1.1974738784767571,
+      1.1974738784767571
+    ]
+  ],
+  "frozen_uncertainty_weights": [
+    0.9847319722175598,
+    1.0212796926498413
+  ],
+  "conflict_summary": {
+    "final_conflict_ratio": 0.0,
+    "final_ema_cos_sim": 0.06369615972042084
+  },
+  "convergence_diagnosis": {
+    "ctr": "IMPROVING - CTR AUC trending up (slope=0.000723)",
+    "cvr": "CONVERGED - CVR AUC stable"
+  }
+}

@@ -1,0 +1,102 @@
+2026-03-04 23:07:37,424 [INFO] Generating synthetic Ali-CCP data: 10000 samples
+2026-03-04 23:07:37,441 [INFO] CTR rate: 0.2646, CVR rate: 0.0726
+2026-03-04 23:07:37,441 [INFO] CVR|Click rate: 0.2744
+2026-03-04 23:07:37,444 [INFO] Data split: train=7000, val=1500, test=1500
+2026-03-04 23:07:37,465 [INFO] PLE params: 207,690
+2026-03-04 23:07:39,432 [INFO] ================================================================================
+2026-03-04 23:07:39,432 [INFO] Starting Multi-Task Learning Training
+2026-03-04 23:07:39,432 [INFO] Model: PLEModel
+2026-03-04 23:07:39,432 [INFO] Device: cpu
+2026-03-04 23:07:39,432 [INFO] Epochs: 5
+2026-03-04 23:07:39,432 [INFO] Config: {
+  "num_tasks": 2,
+  "embedding_dim": 8,
+  "num_extraction_layers": 2,
+  "expert_dim": 64,
+  "num_task_experts": 2,
+  "num_shared_experts": 1,
+  "tower_hidden_dim": 32,
+  "dropout": 0.1,
+  "initial_temperature": 2.0,
+  "use_esmm": true,
+  "use_feature_mask": true,
+  "mask_ratio": 0.15,
+  "num_epochs": 5,
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "grad_clip": 1.0,
+  "use_uncertainty_weight": true,
+  "initial_log_sigma": 0.0,
+  "mask_loss_weight": 0.1,
+  "load_balance_weight": 0.01,
+  "temp_decay_rate": 0.95,
+  "conflict_check_interval": 100,
+  "patience": 15,
+  "min_delta": 0.0001,
+  "save_interval": 5,
+  "ema_alpha": 0.1,
+  "conflict_threshold": -0.1,
+  "freeze_scale": 0.1,
+  "window_size": 50,
+  "num_sparse_features": 20,
+  "sparse_feature_dims": [
+    1001,
+    501,
+    51,
+    21,
+    101,
+    6,
+    31,
+    201,
+    101,
+    25,
+    8,
+    13,
+    51,
+    51,
+    31,
+    31,
+    11,
+    21,
+    16,
+    9
+  ],
+  "num_dense_features": 10
+}
+2026-03-04 23:07:39,432 [INFO] ================================================================================
+2026-03-04 23:09:27,099 [INFO] Epoch   1 | Time: 107.7s | Train Loss: 1.0935 | Val Loss: 1.0210 | CTR AUC: 0.5032 | CVR AUC: 0.5351 | Total AUC: 0.5191 | LR: 0.000905
+2026-03-04 23:09:27,099 [INFO]   Task Weights - CTR: 0.9988, CVR: 1.0012 | log_σ - CTR: 0.0006, CVR: -0.0006
+2026-03-04 23:09:27,099 [INFO]   Gate Temps: Layer0=[1.9, 1.9], ...
+2026-03-04 23:09:27,100 [INFO]   Conflict: cos_sim_ema=0.0252, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:09:27,100 [INFO]   Diagnosis: CTR=WARMING_UP - Not enough data
+2026-03-04 23:09:27,100 [INFO]   Diagnosis: CVR=WARMING_UP - Not enough data
+2026-03-04 23:10:59,590 [INFO] Epoch   2 | Time: 92.5s | Train Loss: 1.0310 | Val Loss: 0.9930 | CTR AUC: 0.4998 | CVR AUC: 0.5627 | Total AUC: 0.5312 | LR: 0.000658
+2026-03-04 23:10:59,590 [INFO]   Task Weights - CTR: 0.9977, CVR: 1.0023 | log_σ - CTR: 0.0011, CVR: -0.0012
+2026-03-04 23:10:59,590 [INFO]   Gate Temps: Layer0=[1.805, 1.805], ...
+2026-03-04 23:10:59,590 [INFO]   Conflict: cos_sim_ema=0.0252, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:10:59,590 [INFO]   Diagnosis: CTR=WARMING_UP - Not enough data
+2026-03-04 23:10:59,590 [INFO]   Diagnosis: CVR=WARMING_UP - Not enough data
+2026-03-04 23:12:16,291 [INFO] Epoch   3 | Time: 76.7s | Train Loss: 0.9873 | Val Loss: 0.9665 | CTR AUC: 0.5003 | CVR AUC: 0.5576 | Total AUC: 0.5290 | LR: 0.000352
+2026-03-04 23:12:16,292 [INFO]   Task Weights - CTR: 0.9970, CVR: 1.0032 | log_σ - CTR: 0.0015, CVR: -0.0016
+2026-03-04 23:12:16,292 [INFO]   Gate Temps: Layer0=[1.7147499999999998, 1.7147499999999998], ...
+2026-03-04 23:12:16,292 [INFO]   Conflict: cos_sim_ema=0.0252, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:12:16,292 [INFO]   Diagnosis: CTR=WARMING_UP - Not enough data
+2026-03-04 23:12:16,292 [INFO]   Diagnosis: CVR=WARMING_UP - Not enough data
+2026-03-04 23:14:30,811 [INFO] Epoch   4 | Time: 134.5s | Train Loss: 0.9708 | Val Loss: 0.9475 | CTR AUC: 0.4991 | CVR AUC: 0.5353 | Total AUC: 0.5172 | LR: 0.000105
+2026-03-04 23:14:30,816 [INFO]   Task Weights - CTR: 0.9965, CVR: 1.0037 | log_σ - CTR: 0.0017, CVR: -0.0018
+2026-03-04 23:14:30,816 [INFO]   Gate Temps: Layer0=[1.6290124999999998, 1.6290124999999998], ...
+2026-03-04 23:14:30,816 [INFO]   Conflict: cos_sim_ema=0.0252, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:14:30,816 [INFO]   Diagnosis: CTR=WARMING_UP - Not enough data
+2026-03-04 23:14:30,817 [INFO]   Diagnosis: CVR=WARMING_UP - Not enough data
+2026-03-04 23:15:59,150 [INFO] Epoch   5 | Time: 88.3s | Train Loss: 0.9661 | Val Loss: 0.9375 | CTR AUC: 0.4979 | CVR AUC: 0.5186 | Total AUC: 0.5083 | LR: 0.000010
+2026-03-04 23:15:59,150 [INFO]   Task Weights - CTR: 0.9963, CVR: 1.0039 | log_σ - CTR: 0.0018, CVR: -0.0020
+2026-03-04 23:15:59,150 [INFO]   Gate Temps: Layer0=[1.5475618749999998, 1.5475618749999998], ...
+2026-03-04 23:15:59,150 [INFO]   Conflict: cos_sim_ema=0.0252, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:15:59,150 [INFO]   Diagnosis: CTR=DEGRADING - CTR AUC trending down (slope=-0.001118)
+2026-03-04 23:15:59,150 [INFO]   Diagnosis: CVR=DEGRADING - CVR AUC trending down (slope=-0.006022)
+2026-03-04 23:15:59,182 [INFO]   Checkpoint saved: logs/ple/checkpoint_epoch_5.pt
+2026-03-04 23:15:59,184 [INFO] ================================================================================
+2026-03-04 23:15:59,184 [INFO] Training Complete!
+2026-03-04 23:15:59,184 [INFO] Best Val AUC: 0.531242
+2026-03-04 23:15:59,184 [INFO] Logs saved to: logs/ple
+2026-03-04 23:15:59,184 [INFO] ================================================================================

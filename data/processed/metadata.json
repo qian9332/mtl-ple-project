@@ -1,0 +1,30 @@
+{
+  "num_samples": 500000,
+  "sparse_dims": [
+    1000,
+    500,
+    50,
+    20,
+    100,
+    5,
+    30,
+    200,
+    100,
+    24,
+    7,
+    12,
+    50,
+    50,
+    30,
+    30,
+    10,
+    20,
+    15,
+    8
+  ],
+  "num_sparse": 20,
+  "num_dense": 10,
+  "ctr_rate": 0.26755601167678833,
+  "cvr_rate": 0.07480599731206894,
+  "description": "Synthetic Ali-CCP dataset for MTL CTR/CVR prediction"
+}

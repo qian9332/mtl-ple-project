@@ -1,0 +1,53 @@
+{
+    "experiment_name": "ple_mtl_ctr_cvr",
+    "description": "PLE Multi-Task Learning for CTR/CVR Prediction with Uncertainty Weighting",
+
+    "data": {
+        "num_samples": 50000,
+        "num_sparse_features": 20,
+        "num_dense_features": 10,
+        "batch_size": 2048,
+        "train_ratio": 0.7,
+        "val_ratio": 0.15,
+        "num_workers": 0,
+        "seed": 42
+    },
+
+    "model": {
+        "num_tasks": 2,
+        "embedding_dim": 8,
+        "num_extraction_layers": 2,
+        "expert_dim": 64,
+        "num_task_experts": 2,
+        "num_shared_experts": 1,
+        "tower_hidden_dim": 32,
+        "dropout": 0.1,
+        "initial_temperature": 2.0,
+        "use_esmm": true,
+        "use_feature_mask": true,
+        "mask_ratio": 0.15
+    },
+
+    "training": {
+        "num_epochs": 10,
+        "learning_rate": 0.001,
+        "weight_decay": 1e-5,
+        "grad_clip": 1.0,
+        "use_uncertainty_weight": true,
+        "initial_log_sigma": 0.0,
+        "mask_loss_weight": 0.1,
+        "load_balance_weight": 0.01,
+        "temp_decay_rate": 0.95,
+        "conflict_check_interval": 100,
+        "patience": 15,
+        "min_delta": 0.0001,
+        "save_interval": 5
+    },
+
+    "gradient_conflict": {
+        "ema_alpha": 0.1,
+        "conflict_threshold": -0.1,
+        "freeze_scale": 0.1,
+        "window_size": 50
+    }
+}

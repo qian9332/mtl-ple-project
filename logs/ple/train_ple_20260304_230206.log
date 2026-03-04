@@ -1,0 +1,275 @@
+2026-03-04 23:02:06,186 [INFO] __main__: Log file: logs/ple/train_ple_20260304_230206.log
+2026-03-04 23:02:06,186 [INFO] __main__: Config: {
+  "experiment_name": "ple_mtl_ctr_cvr",
+  "description": "PLE Multi-Task Learning for CTR/CVR Prediction with Uncertainty Weighting",
+  "data": {
+    "num_samples": 100000,
+    "num_sparse_features": 20,
+    "num_dense_features": 10,
+    "batch_size": 2048,
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "num_workers": 0,
+    "seed": 42
+  },
+  "model": {
+    "num_tasks": 2,
+    "embedding_dim": 8,
+    "num_extraction_layers": 3,
+    "expert_dim": 64,
+    "num_task_experts": 2,
+    "num_shared_experts": 2,
+    "tower_hidden_dim": 32,
+    "dropout": 0.1,
+    "initial_temperature": 2.0,
+    "use_esmm": true,
+    "use_feature_mask": true,
+    "mask_ratio": 0.15
+  },
+  "training": {
+    "num_epochs": 15,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "grad_clip": 1.0,
+    "use_uncertainty_weight": true,
+    "initial_log_sigma": 0.0,
+    "mask_loss_weight": 0.1,
+    "load_balance_weight": 0.01,
+    "temp_decay_rate": 0.95,
+    "conflict_check_interval": 100,
+    "patience": 15,
+    "min_delta": 0.0001,
+    "save_interval": 5
+  },
+  "gradient_conflict": {
+    "ema_alpha": 0.1,
+    "conflict_threshold": -0.1,
+    "freeze_scale": 0.1,
+    "window_size": 50
+  }
+}
+2026-03-04 23:02:06,187 [INFO] __main__: ============================================================
+2026-03-04 23:02:06,187 [INFO] __main__: Step 1: Data Generation
+2026-03-04 23:02:06,187 [INFO] __main__: ============================================================
+2026-03-04 23:02:06,187 [INFO] src.data.dataset: Generating synthetic Ali-CCP data: 100000 samples
+2026-03-04 23:02:06,475 [INFO] src.data.dataset: CTR rate: 0.2724, CVR rate: 0.0767
+2026-03-04 23:02:06,476 [INFO] src.data.dataset: CVR|Click rate: 0.2813
+2026-03-04 23:02:06,505 [INFO] __main__: Data stats: {
+  "num_samples": 100000,
+  "ctr_rate": 0.27243998646736145,
+  "cvr_rate": 0.07665000110864639,
+  "cvr_given_click": 0.2813463509082794,
+  "sparse_dims": [
+    1000,
+    500,
+    50,
+    20,
+    100,
+    5,
+    30,
+    200,
+    100,
+    24,
+    7,
+    12,
+    50,
+    50,
+    30,
+    30,
+    10,
+    20,
+    15,
+    8
+  ],
+  "num_sparse": 20,
+  "num_dense": 10
+}
+2026-03-04 23:02:06,600 [INFO] src.data.dataset: Data split: train=70000, val=15000, test=15000
+2026-03-04 23:02:06,603 [INFO] __main__: DataLoaders created: train=70000, val=15000, test=15000
+2026-03-04 23:02:06,603 [INFO] __main__: ============================================================
+2026-03-04 23:02:06,603 [INFO] __main__: Step 2: Building PLE Model
+2026-03-04 23:02:06,603 [INFO] __main__: ============================================================
+2026-03-04 23:02:06,638 [INFO] __main__: Total params: 288,682
+2026-03-04 23:02:06,638 [INFO] __main__: Trainable params: 288,682
+2026-03-04 23:02:06,640 [INFO] __main__: Model architecture:
+PLEModel(
+  (embeddings): ModuleList(
+    (0): Embedding(1001, 8)
+    (1): Embedding(501, 8)
+    (2): Embedding(51, 8)
+    (3): Embedding(21, 8)
+    (4): Embedding(101, 8)
+    (5): Embedding(6, 8)
+    (6): Embedding(31, 8)
+    (7): Embedding(201, 8)
+    (8): Embedding(101, 8)
+    (9): Embedding(25, 8)
+    (10): Embedding(8, 8)
+    (11): Embedding(13, 8)
+    (12-13): 2 x Embedding(51, 8)
+    (14-15): 2 x Embedding(31, 8)
+    (16): Embedding(11, 8)
+    (17): Embedding(21, 8)
+    (18): Embedding(16, 8)
+    (19): Embedding(9, 8)
+  )
+  (dense_proj): Linear(in_features=10, out_features=80, bias=True)
+  (extraction_layers): ModuleList(
+    (0): ExtractionLayer(
+      (task_experts): ModuleList(
+        (0-1): 2 x ModuleList(
+          (0-1): 2 x ExpertNetwork(
+            (net): Sequential(
+              (0): Linear(in_features=240, out_features=64, bias=True)
+              (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): ReLU(inplace=True)
+              (3): Dropout(p=0.1, inplace=False)
+              (4): Linear(in_features=64, out_features=64, bias=True)
+              (5): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (6): ReLU(inplace=True)
+            )
+          )
+        )
+      )
+      (shared_experts): ModuleList(
+        (0-1): 2 x ExpertNetwork(
+          (net): Sequential(
+            (0): Linear(in_features=240, out_features=64, bias=True)
+            (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Dropout(p=0.1, inplace=False)
+            (4): Linear(in_features=64, out_features=64, bias=True)
+            (5): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (6): ReLU(inplace=True)
+          )
+        )
+      )
+      (gates): ModuleList(
+        (0-1): 2 x GateNetwork(
+          (fc): Linear(in_features=240, out_features=4, bias=False)
+        )
+      )
+    )
+    (1-2): 2 x ExtractionLayer(
+      (task_experts): ModuleList(
+        (0-1): 2 x ModuleList(
+          (0-1): 2 x ExpertNetwork(
+            (net): Sequential(
+              (0): Linear(in_features=64, out_features=64, bias=True)
+              (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): ReLU(inplace=True)
+              (3): Dropout(p=0.1, inplace=False)
+              (4): Linear(in_features=64, out_features=64, bias=True)
+              (5): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (6): ReLU(inplace=True)
+            )
+          )
+        )
+      )
+      (shared_experts): ModuleList(
+        (0-1): 2 x ExpertNetwork(
+          (net): Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Dropout(p=0.1, inplace=False)
+            (4): Linear(in_features=64, out_features=64, bias=True)
+            (5): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (6): ReLU(inplace=True)
+          )
+        )
+      )
+      (gates): ModuleList(
+        (0-1): 2 x GateNetwork(
+          (fc): Linear(in_features=64, out_features=4, bias=False)
+        )
+      )
+    )
+  )
+  (task_towers): ModuleList(
+    (0-1): 2 x Sequential(
+      (0): Linear(in_features=64, out_features=32, bias=True)
+      (1): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): Dropout(p=0.1, inplace=False)
+      (4): Linear(in_features=32, out_features=16, bias=True)
+      (5): ReLU(inplace=True)
+      (6): Linear(in_features=16, out_features=1, bias=True)
+    )
+  )
+  (mask_reconstructor): Sequential(
+    (0): Linear(in_features=64, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=128, out_features=240, bias=True)
+  )
+)
+2026-03-04 23:02:08,498 [INFO] __main__: ============================================================
+2026-03-04 23:02:08,499 [INFO] __main__: Step 3: Training
+2026-03-04 23:02:08,499 [INFO] __main__: ============================================================
+2026-03-04 23:02:08,499 [INFO] src.utils.trainer: ================================================================================
+2026-03-04 23:02:08,499 [INFO] src.utils.trainer: Starting Multi-Task Learning Training
+2026-03-04 23:02:08,499 [INFO] src.utils.trainer: Model: PLEModel
+2026-03-04 23:02:08,499 [INFO] src.utils.trainer: Device: cpu
+2026-03-04 23:02:08,499 [INFO] src.utils.trainer: Epochs: 15
+2026-03-04 23:02:08,499 [INFO] src.utils.trainer: Config: {
+  "num_tasks": 2,
+  "embedding_dim": 8,
+  "num_extraction_layers": 3,
+  "expert_dim": 64,
+  "num_task_experts": 2,
+  "num_shared_experts": 2,
+  "tower_hidden_dim": 32,
+  "dropout": 0.1,
+  "initial_temperature": 2.0,
+  "use_esmm": true,
+  "use_feature_mask": true,
+  "mask_ratio": 0.15,
+  "num_epochs": 15,
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "grad_clip": 1.0,
+  "use_uncertainty_weight": true,
+  "initial_log_sigma": 0.0,
+  "mask_loss_weight": 0.1,
+  "load_balance_weight": 0.01,
+  "temp_decay_rate": 0.95,
+  "conflict_check_interval": 100,
+  "patience": 15,
+  "min_delta": 0.0001,
+  "save_interval": 5,
+  "ema_alpha": 0.1,
+  "conflict_threshold": -0.1,
+  "freeze_scale": 0.1,
+  "window_size": 50,
+  "num_sparse_features": 20,
+  "sparse_feature_dims": [
+    1001,
+    501,
+    51,
+    21,
+    101,
+    6,
+    31,
+    201,
+    101,
+    25,
+    8,
+    13,
+    51,
+    51,
+    31,
+    31,
+    11,
+    21,
+    16,
+    9
+  ],
+  "num_dense_features": 10
+}
+2026-03-04 23:02:08,501 [INFO] src.utils.trainer: ================================================================================
+2026-03-04 23:04:01,535 [INFO] src.utils.trainer: Epoch   1 | Time: 113.0s | Train Loss: 1.0288 | Val Loss: 0.8896 | CTR AUC: 0.4889 | CVR AUC: 0.4862 | Total AUC: 0.4875 | LR: 0.000989
+2026-03-04 23:04:01,535 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9939, CVR: 1.0071 | log_σ - CTR: 0.0030, CVR: -0.0036
+2026-03-04 23:04:01,535 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.9, 1.9], ...
+2026-03-04 23:04:01,535 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.0459, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:04:01,535 [INFO] src.utils.trainer:   Diagnosis: CTR=WARMING_UP - Not enough data
+2026-03-04 23:04:01,535 [INFO] src.utils.trainer:   Diagnosis: CVR=WARMING_UP - Not enough data

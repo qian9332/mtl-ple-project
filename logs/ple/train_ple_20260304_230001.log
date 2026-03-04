@@ -1,0 +1,317 @@
+2026-03-04 23:00:01,532 [INFO] __main__: Log file: logs/ple/train_ple_20260304_230001.log
+2026-03-04 23:00:01,533 [INFO] __main__: Config: {
+  "experiment_name": "ple_mtl_ctr_cvr",
+  "description": "PLE Multi-Task Learning for CTR/CVR Prediction with Uncertainty Weighting",
+  "data": {
+    "num_samples": 500000,
+    "num_sparse_features": 20,
+    "num_dense_features": 10,
+    "batch_size": 4096,
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "num_workers": 2,
+    "seed": 42
+  },
+  "model": {
+    "num_tasks": 2,
+    "embedding_dim": 8,
+    "num_extraction_layers": 3,
+    "expert_dim": 128,
+    "num_task_experts": 3,
+    "num_shared_experts": 2,
+    "tower_hidden_dim": 64,
+    "dropout": 0.1,
+    "initial_temperature": 2.0,
+    "use_esmm": true,
+    "use_feature_mask": true,
+    "mask_ratio": 0.15
+  },
+  "training": {
+    "num_epochs": 30,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "grad_clip": 1.0,
+    "use_uncertainty_weight": true,
+    "initial_log_sigma": 0.0,
+    "mask_loss_weight": 0.1,
+    "load_balance_weight": 0.01,
+    "temp_decay_rate": 0.98,
+    "conflict_check_interval": 50,
+    "patience": 15,
+    "min_delta": 0.0001,
+    "save_interval": 10
+  },
+  "gradient_conflict": {
+    "ema_alpha": 0.1,
+    "conflict_threshold": -0.1,
+    "freeze_scale": 0.1,
+    "window_size": 50
+  }
+}
+2026-03-04 23:00:01,534 [INFO] __main__: ============================================================
+2026-03-04 23:00:01,534 [INFO] __main__: Step 1: Data Generation
+2026-03-04 23:00:01,534 [INFO] __main__: ============================================================
+2026-03-04 23:00:01,534 [INFO] src.data.dataset: Generating synthetic Ali-CCP data: 500000 samples
+2026-03-04 23:00:02,234 [INFO] src.data.dataset: CTR rate: 0.2676, CVR rate: 0.0748
+2026-03-04 23:00:02,238 [INFO] src.data.dataset: CVR|Click rate: 0.2796
+2026-03-04 23:00:02,254 [INFO] __main__: Data stats: {
+  "num_samples": 500000,
+  "ctr_rate": 0.26755601167678833,
+  "cvr_rate": 0.07480599731206894,
+  "cvr_given_click": 0.27959007024765015,
+  "sparse_dims": [
+    1000,
+    500,
+    50,
+    20,
+    100,
+    5,
+    30,
+    200,
+    100,
+    24,
+    7,
+    12,
+    50,
+    50,
+    30,
+    30,
+    10,
+    20,
+    15,
+    8
+  ],
+  "num_sparse": 20,
+  "num_dense": 10
+}
+2026-03-04 23:00:02,317 [INFO] src.data.dataset: Data split: train=350000, val=75000, test=75000
+2026-03-04 23:00:02,318 [INFO] __main__: DataLoaders created: train=350000, val=75000, test=75000
+2026-03-04 23:00:02,318 [INFO] __main__: ============================================================
+2026-03-04 23:00:02,318 [INFO] __main__: Step 2: Building PLE Model
+2026-03-04 23:00:02,318 [INFO] __main__: ============================================================
+2026-03-04 23:00:02,376 [INFO] __main__: Total params: 1,059,338
+2026-03-04 23:00:02,376 [INFO] __main__: Trainable params: 1,059,338
+2026-03-04 23:00:02,377 [INFO] __main__: Model architecture:
+PLEModel(
+  (embeddings): ModuleList(
+    (0): Embedding(1001, 8)
+    (1): Embedding(501, 8)
+    (2): Embedding(51, 8)
+    (3): Embedding(21, 8)
+    (4): Embedding(101, 8)
+    (5): Embedding(6, 8)
+    (6): Embedding(31, 8)
+    (7): Embedding(201, 8)
+    (8): Embedding(101, 8)
+    (9): Embedding(25, 8)
+    (10): Embedding(8, 8)
+    (11): Embedding(13, 8)
+    (12-13): 2 x Embedding(51, 8)
+    (14-15): 2 x Embedding(31, 8)
+    (16): Embedding(11, 8)
+    (17): Embedding(21, 8)
+    (18): Embedding(16, 8)
+    (19): Embedding(9, 8)
+  )
+  (dense_proj): Linear(in_features=10, out_features=80, bias=True)
+  (extraction_layers): ModuleList(
+    (0): ExtractionLayer(
+      (task_experts): ModuleList(
+        (0-1): 2 x ModuleList(
+          (0-2): 3 x ExpertNetwork(
+            (net): Sequential(
+              (0): Linear(in_features=240, out_features=128, bias=True)
+              (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): ReLU(inplace=True)
+              (3): Dropout(p=0.1, inplace=False)
+              (4): Linear(in_features=128, out_features=128, bias=True)
+              (5): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (6): ReLU(inplace=True)
+            )
+          )
+        )
+      )
+      (shared_experts): ModuleList(
+        (0-1): 2 x ExpertNetwork(
+          (net): Sequential(
+            (0): Linear(in_features=240, out_features=128, bias=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Dropout(p=0.1, inplace=False)
+            (4): Linear(in_features=128, out_features=128, bias=True)
+            (5): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (6): ReLU(inplace=True)
+          )
+        )
+      )
+      (gates): ModuleList(
+        (0-1): 2 x GateNetwork(
+          (fc): Linear(in_features=240, out_features=5, bias=False)
+        )
+      )
+    )
+    (1-2): 2 x ExtractionLayer(
+      (task_experts): ModuleList(
+        (0-1): 2 x ModuleList(
+          (0-2): 3 x ExpertNetwork(
+            (net): Sequential(
+              (0): Linear(in_features=128, out_features=128, bias=True)
+              (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): ReLU(inplace=True)
+              (3): Dropout(p=0.1, inplace=False)
+              (4): Linear(in_features=128, out_features=128, bias=True)
+              (5): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (6): ReLU(inplace=True)
+            )
+          )
+        )
+      )
+      (shared_experts): ModuleList(
+        (0-1): 2 x ExpertNetwork(
+          (net): Sequential(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Dropout(p=0.1, inplace=False)
+            (4): Linear(in_features=128, out_features=128, bias=True)
+            (5): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (6): ReLU(inplace=True)
+          )
+        )
+      )
+      (gates): ModuleList(
+        (0-1): 2 x GateNetwork(
+          (fc): Linear(in_features=128, out_features=5, bias=False)
+        )
+      )
+    )
+  )
+  (task_towers): ModuleList(
+    (0-1): 2 x Sequential(
+      (0): Linear(in_features=128, out_features=64, bias=True)
+      (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): Dropout(p=0.1, inplace=False)
+      (4): Linear(in_features=64, out_features=32, bias=True)
+      (5): ReLU(inplace=True)
+      (6): Linear(in_features=32, out_features=1, bias=True)
+    )
+  )
+  (mask_reconstructor): Sequential(
+    (0): Linear(in_features=128, out_features=256, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=256, out_features=240, bias=True)
+  )
+)
+2026-03-04 23:00:03,917 [INFO] __main__: ============================================================
+2026-03-04 23:00:03,917 [INFO] __main__: Step 3: Training
+2026-03-04 23:00:03,917 [INFO] __main__: ============================================================
+2026-03-04 23:00:03,917 [INFO] src.utils.trainer: ================================================================================
+2026-03-04 23:00:03,917 [INFO] src.utils.trainer: Starting Multi-Task Learning Training
+2026-03-04 23:00:03,917 [INFO] src.utils.trainer: Model: PLEModel
+2026-03-04 23:00:03,917 [INFO] src.utils.trainer: Device: cpu
+2026-03-04 23:00:03,917 [INFO] src.utils.trainer: Epochs: 30
+2026-03-04 23:00:03,918 [INFO] src.utils.trainer: Config: {
+  "num_tasks": 2,
+  "embedding_dim": 8,
+  "num_extraction_layers": 3,
+  "expert_dim": 128,
+  "num_task_experts": 3,
+  "num_shared_experts": 2,
+  "tower_hidden_dim": 64,
+  "dropout": 0.1,
+  "initial_temperature": 2.0,
+  "use_esmm": true,
+  "use_feature_mask": true,
+  "mask_ratio": 0.15,
+  "num_epochs": 30,
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "grad_clip": 1.0,
+  "use_uncertainty_weight": true,
+  "initial_log_sigma": 0.0,
+  "mask_loss_weight": 0.1,
+  "load_balance_weight": 0.01,
+  "temp_decay_rate": 0.98,
+  "conflict_check_interval": 50,
+  "patience": 15,
+  "min_delta": 0.0001,
+  "save_interval": 10,
+  "ema_alpha": 0.1,
+  "conflict_threshold": -0.1,
+  "freeze_scale": 0.1,
+  "window_size": 50,
+  "num_sparse_features": 20,
+  "sparse_feature_dims": [
+    1001,
+    501,
+    51,
+    21,
+    101,
+    6,
+    31,
+    201,
+    101,
+    25,
+    8,
+    13,
+    51,
+    51,
+    31,
+    31,
+    11,
+    21,
+    16,
+    9
+  ],
+  "num_dense_features": 10
+}
+2026-03-04 23:00:03,918 [INFO] src.utils.trainer: ================================================================================
+2026-03-04 23:00:42,390 [INFO] src.utils.trainer: Epoch   1 | Time: 38.5s | Train Loss: 0.9370 | Val Loss: 0.8403 | CTR AUC: 0.5027 | CVR AUC: 0.4997 | Total AUC: 0.5012 | LR: 0.000997
+2026-03-04 23:00:42,391 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9862, CVR: 1.0175 | log_σ - CTR: 0.0070, CVR: -0.0087
+2026-03-04 23:00:42,391 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.96, 1.96], ...
+2026-03-04 23:00:42,391 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.0638, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:00:42,391 [INFO] src.utils.trainer:   Diagnosis: CTR=WARMING_UP - Not enough data
+2026-03-04 23:00:42,391 [INFO] src.utils.trainer:   Diagnosis: CVR=WARMING_UP - Not enough data
+2026-03-04 23:01:21,358 [INFO] src.utils.trainer: Epoch   2 | Time: 39.0s | Train Loss: 0.8979 | Val Loss: 0.8357 | CTR AUC: 0.5007 | CVR AUC: 0.5009 | Total AUC: 0.5008 | LR: 0.000989
+2026-03-04 23:01:21,359 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9727, CVR: 1.0350 | log_σ - CTR: 0.0139, CVR: -0.0172
+2026-03-04 23:01:21,359 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.9207999999999998, 1.9207999999999998], ...
+2026-03-04 23:01:21,359 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.1135, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:01:21,359 [INFO] src.utils.trainer:   Diagnosis: CTR=WARMING_UP - Not enough data
+2026-03-04 23:01:21,359 [INFO] src.utils.trainer:   Diagnosis: CVR=WARMING_UP - Not enough data
+2026-03-04 23:22:26,445 [INFO] src.utils.trainer: Epoch   3 | Time: 1265.1s | Train Loss: 0.8845 | Val Loss: 0.8315 | CTR AUC: 0.5036 | CVR AUC: 0.5051 | Total AUC: 0.5043 | LR: 0.000976
+2026-03-04 23:22:26,445 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9598, CVR: 1.0524 | log_σ - CTR: 0.0205, CVR: -0.0255
+2026-03-04 23:22:26,445 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.8823839999999998, 1.8823839999999998], ...
+2026-03-04 23:22:26,445 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.1610, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:22:26,445 [INFO] src.utils.trainer:   Diagnosis: CTR=WARMING_UP - Not enough data
+2026-03-04 23:22:26,445 [INFO] src.utils.trainer:   Diagnosis: CVR=WARMING_UP - Not enough data
+2026-03-04 23:25:57,050 [INFO] src.utils.trainer: Epoch   4 | Time: 210.6s | Train Loss: 0.8740 | Val Loss: 0.8282 | CTR AUC: 0.5083 | CVR AUC: 0.5150 | Total AUC: 0.5117 | LR: 0.000957
+2026-03-04 23:25:57,051 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9479, CVR: 1.0696 | log_σ - CTR: 0.0268, CVR: -0.0337
+2026-03-04 23:25:57,051 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.8447363199999998, 1.8447363199999998], ...
+2026-03-04 23:25:57,051 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.1827, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:25:57,051 [INFO] src.utils.trainer:   Diagnosis: CTR=WARMING_UP - Not enough data
+2026-03-04 23:25:57,051 [INFO] src.utils.trainer:   Diagnosis: CVR=WARMING_UP - Not enough data
+2026-03-04 23:27:02,613 [INFO] src.utils.trainer: Epoch   5 | Time: 65.6s | Train Loss: 0.8645 | Val Loss: 0.8255 | CTR AUC: 0.5127 | CVR AUC: 0.5195 | Total AUC: 0.5161 | LR: 0.000934
+2026-03-04 23:27:02,613 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9373, CVR: 1.0867 | log_σ - CTR: 0.0324, CVR: -0.0416
+2026-03-04 23:27:02,613 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.8078415935999996, 1.8078415935999996], ...
+2026-03-04 23:27:02,613 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.2203, threshold=-0.1000, ratio=0.0000
+2026-03-04 23:27:02,613 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.002761)
+2026-03-04 23:27:02,613 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.005374)
+2026-03-04 23:27:57,227 [INFO] src.utils.trainer: Epoch   6 | Time: 54.6s | Train Loss: 0.8541 | Val Loss: 0.8225 | CTR AUC: 0.5198 | CVR AUC: 0.5365 | Total AUC: 0.5281 | LR: 0.000905
+2026-03-04 23:27:57,228 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9281, CVR: 1.1037 | log_σ - CTR: 0.0373, CVR: -0.0493
+2026-03-04 23:27:57,228 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.7716847617279996, 1.7716847617279996], ...
+2026-03-04 23:27:57,228 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.2578, threshold=-0.0212, ratio=0.0000
+2026-03-04 23:27:57,228 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.004728)
+2026-03-04 23:27:57,228 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.008551)
+2026-03-04 23:28:40,298 [INFO] src.utils.trainer: Epoch   7 | Time: 43.1s | Train Loss: 0.8437 | Val Loss: 0.8226 | CTR AUC: 0.5229 | CVR AUC: 0.5383 | Total AUC: 0.5306 | LR: 0.000873
+2026-03-04 23:28:40,299 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9202, CVR: 1.1203 | log_σ - CTR: 0.0416, CVR: -0.0568
+2026-03-04 23:28:40,299 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.7362510664934396, 1.7362510664934396], ...
+2026-03-04 23:28:40,299 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.2727, threshold=0.0128, ratio=0.0000
+2026-03-04 23:28:40,299 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.005010)
+2026-03-04 23:28:40,299 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.008783)
+2026-03-04 23:29:36,686 [INFO] src.utils.trainer: Epoch   8 | Time: 56.4s | Train Loss: 0.8328 | Val Loss: 0.8211 | CTR AUC: 0.5228 | CVR AUC: 0.5407 | Total AUC: 0.5318 | LR: 0.000836
+2026-03-04 23:29:36,687 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9139, CVR: 1.1367 | log_σ - CTR: 0.0450, CVR: -0.0641
+2026-03-04 23:29:36,687 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.7015260451635708, 1.7015260451635708], ...
+2026-03-04 23:29:36,687 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3027, threshold=0.0712, ratio=0.0000
+2026-03-04 23:29:36,687 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.003921)
+2026-03-04 23:29:36,687 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.007016)

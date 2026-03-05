@@ -315,3 +315,158 @@ PLEModel(
 2026-03-04 23:29:36,687 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3027, threshold=0.0712, ratio=0.0000
 2026-03-04 23:29:36,687 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.003921)
 2026-03-04 23:29:36,687 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.007016)
+2026-03-04 23:30:17,450 [INFO] src.utils.trainer: Epoch   9 | Time: 40.8s | Train Loss: 0.8231 | Val Loss: 0.8190 | CTR AUC: 0.5282 | CVR AUC: 0.5450 | Total AUC: 0.5366 | LR: 0.000796
+2026-03-04 23:30:17,450 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9089, CVR: 1.1528 | log_σ - CTR: 0.0478, CVR: -0.0711
+2026-03-04 23:30:17,450 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.6674955242602993, 1.6674955242602993], ...
+2026-03-04 23:30:17,450 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3282, threshold=0.1190, ratio=0.0000
+2026-03-04 23:30:17,450 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.003414)
+2026-03-04 23:30:17,450 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.005534)
+2026-03-04 23:31:16,225 [INFO] src.utils.trainer: Epoch  10 | Time: 58.8s | Train Loss: 0.8132 | Val Loss: 0.8272 | CTR AUC: 0.5269 | CVR AUC: 0.5475 | Total AUC: 0.5372 | LR: 0.000753
+2026-03-04 23:31:16,226 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9052, CVR: 1.1685 | log_σ - CTR: 0.0498, CVR: -0.0779
+2026-03-04 23:31:16,226 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.6341456137750934, 1.6341456137750934], ...
+2026-03-04 23:31:16,226 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3371, threshold=0.1397, ratio=0.0000
+2026-03-04 23:31:16,226 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.001958)
+2026-03-04 23:31:16,226 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.002878)
+2026-03-04 23:31:16,297 [INFO] src.utils.trainer:   Checkpoint saved: logs/ple/checkpoint_epoch_10.pt
+2026-03-04 23:32:09,729 [INFO] src.utils.trainer: Epoch  11 | Time: 53.4s | Train Loss: 0.8002 | Val Loss: 0.8232 | CTR AUC: 0.5323 | CVR AUC: 0.5519 | Total AUC: 0.5421 | LR: 0.000706
+2026-03-04 23:32:09,730 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9029, CVR: 1.1837 | log_σ - CTR: 0.0511, CVR: -0.0843
+2026-03-04 23:32:09,730 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.6014627014995915, 1.6014627014995915], ...
+2026-03-04 23:32:09,730 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3527, threshold=0.1758, ratio=0.0000
+2026-03-04 23:32:09,730 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.002291)
+2026-03-04 23:32:09,730 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.003394)
+2026-03-04 23:32:53,438 [INFO] src.utils.trainer: Epoch  12 | Time: 43.7s | Train Loss: 0.7869 | Val Loss: 0.8284 | CTR AUC: 0.5309 | CVR AUC: 0.5540 | Total AUC: 0.5424 | LR: 0.000658
+2026-03-04 23:32:53,438 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9019, CVR: 1.1985 | log_σ - CTR: 0.0516, CVR: -0.0905
+2026-03-04 23:32:53,438 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.5694334474695997, 1.5694334474695997], ...
+2026-03-04 23:32:53,438 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3688, threshold=0.2057, ratio=0.0000
+2026-03-04 23:32:53,438 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.002017)
+2026-03-04 23:32:53,438 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.003340)
+2026-03-04 23:33:47,291 [INFO] src.utils.trainer: Epoch  13 | Time: 53.9s | Train Loss: 0.7756 | Val Loss: 0.8381 | CTR AUC: 0.5321 | CVR AUC: 0.5545 | Total AUC: 0.5433 | LR: 0.000608
+2026-03-04 23:33:47,291 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9020, CVR: 1.2127 | log_σ - CTR: 0.0516, CVR: -0.0964
+2026-03-04 23:33:47,291 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.5380447785202076, 1.5380447785202076], ...
+2026-03-04 23:33:47,291 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3802, threshold=0.2306, ratio=0.0000
+2026-03-04 23:33:47,291 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.001167)
+2026-03-04 23:33:47,291 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.002539)
+2026-03-04 23:34:29,048 [INFO] src.utils.trainer: Epoch  14 | Time: 41.8s | Train Loss: 0.7630 | Val Loss: 0.8472 | CTR AUC: 0.5333 | CVR AUC: 0.5567 | Total AUC: 0.5450 | LR: 0.000557
+2026-03-04 23:34:29,049 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9031, CVR: 1.2263 | log_σ - CTR: 0.0509, CVR: -0.1020
+2026-03-04 23:34:29,049 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.5072838829498034, 1.5072838829498034], ...
+2026-03-04 23:34:29,049 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3840, threshold=0.2415, ratio=0.0000
+2026-03-04 23:34:29,049 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.001257)
+2026-03-04 23:34:29,049 [INFO] src.utils.trainer:   Diagnosis: CVR=IMPROVING - CVR AUC trending up (slope=0.002096)
+2026-03-04 23:35:47,356 [INFO] src.utils.trainer: Epoch  15 | Time: 78.3s | Train Loss: 0.7494 | Val Loss: 0.8672 | CTR AUC: 0.5325 | CVR AUC: 0.5532 | Total AUC: 0.5428 | LR: 0.000505
+2026-03-04 23:35:47,357 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9050, CVR: 1.2392 | log_σ - CTR: 0.0499, CVR: -0.1072
+2026-03-04 23:35:47,357 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.4771382052908073, 1.4771382052908073], ...
+2026-03-04 23:35:47,357 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3908, threshold=0.2606, ratio=0.0000
+2026-03-04 23:35:47,357 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.000281)
+2026-03-04 23:35:47,357 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:36:50,114 [INFO] src.utils.trainer: Epoch  16 | Time: 62.8s | Train Loss: 0.7364 | Val Loss: 0.8621 | CTR AUC: 0.5336 | CVR AUC: 0.5574 | Total AUC: 0.5455 | LR: 0.000453
+2026-03-04 23:36:50,115 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9078, CVR: 1.2514 | log_σ - CTR: 0.0484, CVR: -0.1121
+2026-03-04 23:36:50,115 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.4475954411849912, 1.4475954411849912], ...
+2026-03-04 23:36:50,115 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3917, threshold=0.2764, ratio=0.0000
+2026-03-04 23:36:50,115 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.000584)
+2026-03-04 23:36:50,115 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:37:41,034 [INFO] src.utils.trainer: Epoch  17 | Time: 50.9s | Train Loss: 0.7231 | Val Loss: 0.8671 | CTR AUC: 0.5327 | CVR AUC: 0.5547 | Total AUC: 0.5437 | LR: 0.000402
+2026-03-04 23:37:41,034 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9109, CVR: 1.2629 | log_σ - CTR: 0.0467, CVR: -0.1167
+2026-03-04 23:37:41,034 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.4186435323612914, 1.4186435323612914], ...
+2026-03-04 23:37:41,035 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3933, threshold=0.2833, ratio=0.0000
+2026-03-04 23:37:41,035 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.000148)
+2026-03-04 23:37:41,035 [INFO] src.utils.trainer:   Diagnosis: CVR=OSCILLATING - CVR unstable (sign_changes=3, std=0.0015)
+2026-03-04 23:38:35,697 [INFO] src.utils.trainer: Epoch  18 | Time: 54.7s | Train Loss: 0.7131 | Val Loss: 0.8762 | CTR AUC: 0.5322 | CVR AUC: 0.5525 | Total AUC: 0.5424 | LR: 0.000352
+2026-03-04 23:38:35,697 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9144, CVR: 1.2734 | log_σ - CTR: 0.0448, CVR: -0.1208
+2026-03-04 23:38:35,697 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.3902706617140654, 1.3902706617140654], ...
+2026-03-04 23:38:35,697 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3998, threshold=0.2954, ratio=0.0000
+2026-03-04 23:38:35,697 [INFO] src.utils.trainer:   Diagnosis: CTR=DEGRADING - CTR AUC trending down (slope=-0.000193)
+2026-03-04 23:38:35,697 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:40:23,906 [INFO] src.utils.trainer: Epoch  19 | Time: 108.2s | Train Loss: 0.6990 | Val Loss: 0.8881 | CTR AUC: 0.5337 | CVR AUC: 0.5551 | Total AUC: 0.5444 | LR: 0.000304
+2026-03-04 23:40:23,906 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9179, CVR: 1.2831 | log_σ - CTR: 0.0428, CVR: -0.1246
+2026-03-04 23:40:23,906 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.3624652484797841, 1.3624652484797841], ...
+2026-03-04 23:40:23,906 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3999, threshold=0.3056, ratio=0.0000
+2026-03-04 23:40:23,906 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.000120)
+2026-03-04 23:40:23,906 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:41:12,352 [INFO] src.utils.trainer: Epoch  20 | Time: 48.5s | Train Loss: 0.6884 | Val Loss: 0.9010 | CTR AUC: 0.5348 | CVR AUC: 0.5560 | Total AUC: 0.5454 | LR: 0.000258
+2026-03-04 23:41:12,352 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9217, CVR: 1.2918 | log_σ - CTR: 0.0408, CVR: -0.1280
+2026-03-04 23:41:12,352 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.3352159435101885, 1.3352159435101885], ...
+2026-03-04 23:41:12,353 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3998, threshold=0.3100, ratio=0.0000
+2026-03-04 23:41:12,353 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.000358)
+2026-03-04 23:41:12,353 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:41:12,412 [INFO] src.utils.trainer:   Checkpoint saved: logs/ple/checkpoint_epoch_20.pt
+2026-03-04 23:42:02,210 [INFO] src.utils.trainer: Epoch  21 | Time: 49.8s | Train Loss: 0.6758 | Val Loss: 0.9098 | CTR AUC: 0.5329 | CVR AUC: 0.5523 | Total AUC: 0.5426 | LR: 0.000214
+2026-03-04 23:42:02,211 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9253, CVR: 1.2997 | log_σ - CTR: 0.0388, CVR: -0.1311
+2026-03-04 23:42:02,211 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.3085116246399846, 1.3085116246399846], ...
+2026-03-04 23:42:02,211 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.4015, threshold=0.3177, ratio=0.0000
+2026-03-04 23:42:02,211 [INFO] src.utils.trainer:   Diagnosis: CTR=IMPROVING - CTR AUC trending up (slope=0.000299)
+2026-03-04 23:42:02,211 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:42:49,486 [INFO] src.utils.trainer: Epoch  22 | Time: 47.3s | Train Loss: 0.6676 | Val Loss: 0.9207 | CTR AUC: 0.5325 | CVR AUC: 0.5508 | Total AUC: 0.5417 | LR: 0.000174
+2026-03-04 23:42:49,486 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9288, CVR: 1.3067 | log_σ - CTR: 0.0369, CVR: -0.1338
+2026-03-04 23:42:49,487 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.282341392147185, 1.282341392147185], ...
+2026-03-04 23:42:49,487 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.4015, threshold=0.3243, ratio=0.0000
+2026-03-04 23:42:49,487 [INFO] src.utils.trainer:   Diagnosis: CTR=DEGRADING - CTR AUC trending down (slope=-0.000033)
+2026-03-04 23:42:49,487 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:43:48,939 [INFO] src.utils.trainer: Epoch  23 | Time: 59.5s | Train Loss: 0.6584 | Val Loss: 0.9360 | CTR AUC: 0.5308 | CVR AUC: 0.5482 | Total AUC: 0.5395 | LR: 0.000137
+2026-03-04 23:43:48,939 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9320, CVR: 1.3129 | log_σ - CTR: 0.0352, CVR: -0.1361
+2026-03-04 23:43:48,939 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.256694564304241, 1.256694564304241], ...
+2026-03-04 23:43:48,940 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3997, threshold=0.3298, ratio=0.0000
+2026-03-04 23:43:48,940 [INFO] src.utils.trainer:   Diagnosis: CTR=DEGRADING - CTR AUC trending down (slope=-0.000813)
+2026-03-04 23:43:48,940 [INFO] src.utils.trainer:   Diagnosis: CVR=DEGRADING - CVR AUC trending down (slope=-0.001895)
+2026-03-04 23:44:46,641 [INFO] src.utils.trainer: Epoch  24 | Time: 57.7s | Train Loss: 0.6508 | Val Loss: 0.9429 | CTR AUC: 0.5320 | CVR AUC: 0.5510 | Total AUC: 0.5415 | LR: 0.000105
+2026-03-04 23:44:46,641 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9349, CVR: 1.3182 | log_σ - CTR: 0.0336, CVR: -0.1381
+2026-03-04 23:44:46,641 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.2315606730181563, 1.2315606730181563], ...
+2026-03-04 23:44:46,641 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.4002, threshold=0.3322, ratio=0.0000
+2026-03-04 23:44:46,641 [INFO] src.utils.trainer:   Diagnosis: CTR=DEGRADING - CTR AUC trending down (slope=-0.000765)
+2026-03-04 23:44:46,641 [INFO] src.utils.trainer:   Diagnosis: CVR=DEGRADING - CVR AUC trending down (slope=-0.001405)
+2026-03-04 23:46:05,216 [INFO] src.utils.trainer: Epoch  25 | Time: 78.6s | Train Loss: 0.6445 | Val Loss: 0.9447 | CTR AUC: 0.5322 | CVR AUC: 0.5525 | Total AUC: 0.5423 | LR: 0.000076
+2026-03-04 23:46:05,216 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9375, CVR: 1.3228 | log_σ - CTR: 0.0323, CVR: -0.1399
+2026-03-04 23:46:05,216 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.206929459557793, 1.206929459557793], ...
+2026-03-04 23:46:05,216 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3968, threshold=0.3363, ratio=0.0000
+2026-03-04 23:46:05,216 [INFO] src.utils.trainer:   Diagnosis: CTR=DEGRADING - CTR AUC trending down (slope=-0.000185)
+2026-03-04 23:46:05,216 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:46:49,050 [INFO] src.utils.trainer: Epoch  26 | Time: 43.8s | Train Loss: 0.6417 | Val Loss: 0.9539 | CTR AUC: 0.5307 | CVR AUC: 0.5484 | Total AUC: 0.5395 | LR: 0.000053
+2026-03-04 23:46:49,051 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9398, CVR: 1.3268 | log_σ - CTR: 0.0310, CVR: -0.1414
+2026-03-04 23:46:49,051 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.1827908703666372, 1.1827908703666372], ...
+2026-03-04 23:46:49,051 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3953, threshold=0.3396, ratio=0.0000
+2026-03-04 23:46:49,051 [INFO] src.utils.trainer:   Diagnosis: CTR=DEGRADING - CTR AUC trending down (slope=-0.000241)
+2026-03-04 23:46:49,051 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:48:22,700 [INFO] src.utils.trainer: Epoch  27 | Time: 93.7s | Train Loss: 0.6354 | Val Loss: 0.9586 | CTR AUC: 0.5314 | CVR AUC: 0.5498 | Total AUC: 0.5406 | LR: 0.000034
+2026-03-04 23:48:22,700 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9418, CVR: 1.3302 | log_σ - CTR: 0.0300, CVR: -0.1427
+2026-03-04 23:48:22,701 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.1591350529593045, 1.1591350529593045], ...
+2026-03-04 23:48:22,701 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3942, threshold=0.3410, ratio=0.0000
+2026-03-04 23:48:22,701 [INFO] src.utils.trainer:   Diagnosis: CTR=DEGRADING - CTR AUC trending down (slope=-0.000017)
+2026-03-04 23:48:22,701 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:49:21,891 [INFO] src.utils.trainer: Epoch  28 | Time: 59.2s | Train Loss: 0.6333 | Val Loss: 0.9603 | CTR AUC: 0.5312 | CVR AUC: 0.5496 | Total AUC: 0.5404 | LR: 0.000021
+2026-03-04 23:49:21,892 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9435, CVR: 1.3332 | log_σ - CTR: 0.0291, CVR: -0.1438
+2026-03-04 23:49:21,892 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.1359523519001185, 1.1359523519001185], ...
+2026-03-04 23:49:21,892 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3942, threshold=0.3435, ratio=0.0000
+2026-03-04 23:49:21,892 [INFO] src.utils.trainer:   Diagnosis: CTR=DEGRADING - CTR AUC trending down (slope=-0.000247)
+2026-03-04 23:49:21,892 [INFO] src.utils.trainer:   Diagnosis: CVR=OSCILLATING - CVR unstable (sign_changes=3, std=0.0014)
+2026-03-04 23:50:54,431 [INFO] src.utils.trainer: Epoch  29 | Time: 92.5s | Train Loss: 0.6303 | Val Loss: 0.9623 | CTR AUC: 0.5310 | CVR AUC: 0.5490 | Total AUC: 0.5400 | LR: 0.000013
+2026-03-04 23:50:54,431 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9451, CVR: 1.3359 | log_σ - CTR: 0.0282, CVR: -0.1448
+2026-03-04 23:50:54,431 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.1132333048621161, 1.1132333048621161], ...
+2026-03-04 23:50:54,431 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3892, threshold=0.3453, ratio=0.0000
+2026-03-04 23:50:54,432 [INFO] src.utils.trainer:   Diagnosis: CTR=DEGRADING - CTR AUC trending down (slope=-0.000177)
+2026-03-04 23:50:54,432 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:52:27,663 [INFO] src.utils.trainer: Epoch  30 | Time: 93.2s | Train Loss: 0.6301 | Val Loss: 0.9650 | CTR AUC: 0.5310 | CVR AUC: 0.5490 | Total AUC: 0.5400 | LR: 0.000010
+2026-03-04 23:52:27,663 [INFO] src.utils.trainer:   Task Weights - CTR: 0.9465, CVR: 1.3384 | log_σ - CTR: 0.0275, CVR: -0.1457
+2026-03-04 23:52:27,664 [INFO] src.utils.trainer:   Gate Temps: Layer0=[1.0909686387648738, 1.0909686387648738], ...
+2026-03-04 23:52:27,664 [INFO] src.utils.trainer:   Conflict: cos_sim_ema=0.3905, threshold=0.3463, ratio=0.0000
+2026-03-04 23:52:27,664 [INFO] src.utils.trainer:   Diagnosis: CTR=CONVERGED - CTR AUC stable (delta < 0.001)
+2026-03-04 23:52:27,664 [INFO] src.utils.trainer:   Diagnosis: CVR=CONVERGED - CVR AUC stable
+2026-03-04 23:52:27,731 [INFO] src.utils.trainer:   Checkpoint saved: logs/ple/checkpoint_epoch_30.pt
+2026-03-04 23:52:27,736 [INFO] src.utils.trainer: ================================================================================
+2026-03-04 23:52:27,736 [INFO] src.utils.trainer: Training Complete!
+2026-03-04 23:52:27,736 [INFO] src.utils.trainer: Best Val AUC: 0.545505
+2026-03-04 23:52:27,736 [INFO] src.utils.trainer: Logs saved to: logs/ple
+2026-03-04 23:52:27,736 [INFO] src.utils.trainer: ================================================================================
+2026-03-04 23:52:27,737 [INFO] __main__: Total training time: 3143.8s
+2026-03-04 23:52:27,737 [INFO] __main__: ============================================================
+2026-03-04 23:52:27,737 [INFO] __main__: Step 4: Test Evaluation
+2026-03-04 23:52:27,737 [INFO] __main__: ============================================================
+2026-03-04 23:52:30,374 [INFO] __main__: Test Results:
+2026-03-04 23:52:30,374 [INFO] __main__:   val_loss: 0.863326
+2026-03-04 23:52:30,374 [INFO] __main__:   ctr_auc: 0.532706
+2026-03-04 23:52:30,374 [INFO] __main__:   cvr_auc: 0.550907
+2026-03-04 23:52:30,374 [INFO] __main__:   total_auc: 0.541806
+2026-03-04 23:52:30,374 [INFO] __main__:   ctr_logloss: 0.605096
+2026-03-04 23:52:30,374 [INFO] __main__:   cvr_logloss: 0.303942
+2026-03-04 23:52:30,375 [INFO] __main__: Frozen uncertainty weights (zero inference overhead): [0.9465086460113525, 1.3384227752685547]
+2026-03-04 23:52:30,375 [INFO] __main__: ============================================================
+2026-03-04 23:52:30,375 [INFO] __main__: Training Pipeline Complete!
+2026-03-04 23:52:30,375 [INFO] __main__: ============================================================

@@ -1,65 +1,239 @@
 [
   {
     "epoch": 1,
-    "time_seconds": 76.34,
+    "time_seconds": 38.47,
     "train": {
-      "total_loss": 1.0481152920161976,
-      "ctr_loss": 0.6645850924884572,
-      "cvr_loss": 0.3053276836872101,
-      "mask_loss": 0.6868142731049481,
-      "load_balance_loss": 1.008958430851207,
-      "num_batches": 17,
+      "total_loss": 0.9369912259718951,
+      "ctr_loss": 0.5947063691475812,
+      "cvr_loss": 0.2735875383895986,
+      "mask_loss": 0.6167166751973769,
+      "load_balance_loss": 0.9577417219386382,
+      "num_batches": 85,
       "conflict_count": 0,
-      "avg_cos_sim": 0.3036091923713684,
-      "train_ctr_auc": 0.4989068073659624,
-      "train_cvr_auc": 0.5028546880194232,
-      "task_weight_ctr": 0.9966857433319092,
-      "task_weight_cvr": 1.0034542083740234,
-      "log_sigma_ctr": 0.0016598757356405258,
-      "log_sigma_cvr": -0.0017241128953173757
+      "avg_cos_sim": 0.6724258065223694,
+      "train_ctr_auc": 0.5002931782708662,
+      "train_cvr_auc": 0.49738637896969073,
+      "task_weight_ctr": 0.9861633777618408,
+      "task_weight_cvr": 1.0175102949142456,
+      "log_sigma_ctr": 0.00696661276742816,
+      "log_sigma_cvr": -0.008679359219968319
     },
     "val": {
-      "val_loss": 0.9540231823921204,
-      "ctr_auc": 0.4862155073859897,
-      "cvr_auc": 0.47729598746810264,
-      "total_auc": 0.4817557474270462,
-      "ctr_logloss": 0.6535060003646419,
-      "cvr_logloss": 0.3016876474423331
+      "val_loss": 0.8402577698230743,
+      "ctr_auc": 0.502651739138888,
+      "cvr_auc": 0.49966988630098785,
+      "total_auc": 0.501160812719938,
+      "ctr_logloss": 0.5803743593713637,
+      "cvr_logloss": 0.26449811287713637
     },
     "gate_temperatures": [
       [
-        1.9,
-        1.9
+        1.96,
+        1.96
       ],
       [
-        1.9,
-        1.9
+        1.96,
+        1.96
+      ],
+      [
+        1.96,
+        1.96
       ]
     ],
     "expert_collapse": {
       "collapsed": false,
       "collapsed_tasks": [],
       "max_utilization_per_task": [
-        0.3517726957798004,
-        0.3346349000930786
+        0.20245851576328278,
+        0.20279596745967865
       ],
       "utilization_matrix": [
         [
-          0.3372385501861572,
-          0.31098872423171997,
-          0.3517726957798004
+          0.20138517022132874,
+          0.19734084606170654,
+          0.19931763410568237,
+          0.20245851576328278,
+          0.19949784874916077
         ],
         [
-          0.3314010202884674,
-          0.3346349000930786,
-          0.33396410942077637
+          0.2018565833568573,
+          0.19904549419879913,
+          0.19867543876171112,
+          0.20279596745967865,
+          0.19762656092643738
         ]
       ]
     },
     "early_stopping": {
       "should_stop": false,
-      "best_score": 0.4817557474270462,
+      "best_score": 0.501160812719938,
       "best_epoch": 0,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "WARMING_UP - Not enough data",
+        "cvr": "WARMING_UP - Not enough data"
+      }
+    },
+    "learning_rate": 0.0009972883382072953,
+    "conflict_detector": {
+      "ema_cos_sim": 0.06376098603010177,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 2,
+    "time_seconds": 38.97,
+    "train": {
+      "total_loss": 0.897861250709085,
+      "ctr_loss": 0.5820024644627291,
+      "cvr_loss": 0.26694979019024795,
+      "mask_loss": 0.5303026798893423,
+      "load_balance_loss": 0.3374866802026244,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.6498061418533325,
+      "train_ctr_auc": 0.5108531560274643,
+      "train_cvr_auc": 0.5179764580494878,
+      "task_weight_ctr": 0.9726681113243103,
+      "task_weight_cvr": 1.0349787473678589,
+      "log_sigma_ctr": 0.01385616697371006,
+      "log_sigma_cvr": -0.017190439626574516
+    },
+    "val": {
+      "val_loss": 0.8356717109680176,
+      "ctr_auc": 0.5007141970967938,
+      "cvr_auc": 0.5009150104748377,
+      "total_auc": 0.5008146037858157,
+      "ctr_logloss": 0.5807090588207348,
+      "cvr_logloss": 0.264436913172669
+    },
+    "gate_temperatures": [
+      [
+        1.9207999999999998,
+        1.9207999999999998
+      ],
+      [
+        1.9207999999999998,
+        1.9207999999999998
+      ],
+      [
+        1.9207999999999998,
+        1.9207999999999998
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.20146171748638153,
+        0.2010558843612671
+      ],
+      "utilization_matrix": [
+        [
+          0.20146171748638153,
+          0.1998392641544342,
+          0.20143847167491913,
+          0.19949239492416382,
+          0.19776825606822968
+        ],
+        [
+          0.20003843307495117,
+          0.20055972039699554,
+          0.2010558843612671,
+          0.19985798001289368,
+          0.1984880268573761
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.501160812719938,
+      "best_epoch": 0,
+      "patience_counter": 1,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "WARMING_UP - Not enough data",
+        "cvr": "WARMING_UP - Not enough data"
+      }
+    },
+    "learning_rate": 0.0009891830623632338,
+    "conflict_detector": {
+      "ema_cos_sim": 0.11346310176551341,
+      "ema_threshold": -0.1,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 3,
+    "time_seconds": 1265.09,
+    "train": {
+      "total_loss": 0.8844707643284517,
+      "ctr_loss": 0.5814909850849824,
+      "cvr_loss": 0.2663970575613134,
+      "mask_loss": 0.46326088765088247,
+      "load_balance_loss": 0.24272775395828136,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.7253758907318115,
+      "train_ctr_auc": 0.5197747256926507,
+      "train_cvr_auc": 0.535240131725137,
+      "task_weight_ctr": 0.9597532153129578,
+      "task_weight_cvr": 1.0523895025253296,
+      "log_sigma_ctr": 0.020539555698633194,
+      "log_sigma_cvr": -0.025531675666570663
+    },
+    "val": {
+      "val_loss": 0.831541121006012,
+      "ctr_auc": 0.5035559603901975,
+      "cvr_auc": 0.5051130711705226,
+      "total_auc": 0.50433451578036,
+      "ctr_logloss": 0.5809375833712372,
+      "cvr_logloss": 0.2647193598470673
+    },
+    "gate_temperatures": [
+      [
+        1.8823839999999998,
+        1.8823839999999998
+      ],
+      [
+        1.8823839999999998,
+        1.8823839999999998
+      ],
+      [
+        1.8823839999999998,
+        1.8823839999999998
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.2013891041278839,
+        0.20173250138759613
+      ],
+      "utilization_matrix": [
+        [
+          0.20124858617782593,
+          0.2013852745294571,
+          0.2013891041278839,
+          0.19767718017101288,
+          0.19829991459846497
+        ],
+        [
+          0.20173250138759613,
+          0.2009681761264801,
+          0.20014123618602753,
+          0.19859258830547333,
+          0.19856558740139008
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.50433451578036,
+      "best_epoch": 2,
       "patience_counter": 0,
       "effective_patience": 15,
       "diagnosis": {
@@ -69,683 +243,2249 @@
     },
     "learning_rate": 0.0009757729755661011,
     "conflict_detector": {
-      "ema_cos_sim": 0.03036091923713684,
-      "ema_threshold": -0.1,
-      "conflict_ratio": 0.0
-    }
-  },
-  {
-    "epoch": 2,
-    "time_seconds": 125.91,
-    "train": {
-      "total_loss": 0.953181010835311,
-      "ctr_loss": 0.6166085916406968,
-      "cvr_loss": 0.27295123303637786,
-      "mask_loss": 0.637680965311387,
-      "load_balance_loss": 0.15432637973743327,
-      "num_batches": 17,
-      "conflict_count": 0,
-      "avg_cos_sim": 0.0,
-      "train_ctr_auc": 0.5089854605482234,
-      "train_cvr_auc": 0.5217974998428299,
-      "task_weight_ctr": 0.9937976002693176,
-      "task_weight_cvr": 1.0069587230682373,
-      "log_sigma_ctr": 0.0031108714174479246,
-      "log_sigma_cvr": -0.0034672950860112906
-    },
-    "val": {
-      "val_loss": 0.8833492696285248,
-      "ctr_auc": 0.496151469977718,
-      "cvr_auc": 0.5034992096688187,
-      "total_auc": 0.4998253398232683,
-      "ctr_logloss": 0.6149871852554839,
-      "cvr_logloss": 0.27069418562616215
-    },
-    "gate_temperatures": [
-      [
-        1.805,
-        1.805
-      ],
-      [
-        1.805,
-        1.805
-      ]
-    ],
-    "expert_collapse": {
-      "collapsed": false,
-      "collapsed_tasks": [],
-      "max_utilization_per_task": [
-        0.33524876832962036,
-        0.3390844166278839
-      ],
-      "utilization_matrix": [
-        [
-          0.33524876832962036,
-          0.33450043201446533,
-          0.3302507996559143
-        ],
-        [
-          0.33142954111099243,
-          0.3390844166278839,
-          0.32948604226112366
-        ]
-      ]
-    },
-    "early_stopping": {
-      "should_stop": false,
-      "best_score": 0.4998253398232683,
-      "best_epoch": 1,
-      "patience_counter": 0,
-      "effective_patience": 15,
-      "diagnosis": {
-        "ctr": "WARMING_UP - Not enough data",
-        "cvr": "WARMING_UP - Not enough data"
-      }
-    },
-    "learning_rate": 0.000905463412215599,
-    "conflict_detector": {
-      "ema_cos_sim": 0.03036091923713684,
-      "ema_threshold": -0.1,
-      "conflict_ratio": 0.0
-    }
-  },
-  {
-    "epoch": 3,
-    "time_seconds": 254.04,
-    "train": {
-      "total_loss": 0.9211258783059961,
-      "ctr_loss": 0.5927880196010366,
-      "cvr_loss": 0.2662697022452074,
-      "mask_loss": 0.6191901880152085,
-      "load_balance_loss": 0.27814337172928977,
-      "num_batches": 17,
-      "conflict_count": 0,
-      "avg_cos_sim": 0.0,
-      "train_ctr_auc": 0.5271292874448865,
-      "train_cvr_auc": 0.5612239623319739,
-      "task_weight_ctr": 0.9914482235908508,
-      "task_weight_cvr": 1.0102832317352295,
-      "log_sigma_ctr": 0.004294289276003838,
-      "log_sigma_cvr": -0.00511534558609128
-    },
-    "val": {
-      "val_loss": 0.8583700954914093,
-      "ctr_auc": 0.4975354597135263,
-      "cvr_auc": 0.5006673936390518,
-      "total_auc": 0.49910142667628904,
-      "ctr_logloss": 0.5935307531763001,
-      "cvr_logloss": 0.2681508547891134
-    },
-    "gate_temperatures": [
-      [
-        1.7147499999999998,
-        1.7147499999999998
-      ],
-      [
-        1.7147499999999998,
-        1.7147499999999998
-      ]
-    ],
-    "expert_collapse": {
-      "collapsed": false,
-      "collapsed_tasks": [],
-      "max_utilization_per_task": [
-        0.34134671092033386,
-        0.3438047468662262
-      ],
-      "utilization_matrix": [
-        [
-          0.34134671092033386,
-          0.3375219404697418,
-          0.32113131880760193
-        ],
-        [
-          0.3438047468662262,
-          0.331520140171051,
-          0.32467514276504517
-        ]
-      ]
-    },
-    "early_stopping": {
-      "should_stop": false,
-      "best_score": 0.4998253398232683,
-      "best_epoch": 1,
-      "patience_counter": 1,
-      "effective_patience": 15,
-      "diagnosis": {
-        "ctr": "WARMING_UP - Not enough data",
-        "cvr": "WARMING_UP - Not enough data"
-      }
-    },
-    "learning_rate": 0.0007959536998847742,
-    "conflict_detector": {
-      "ema_cos_sim": 0.03036091923713684,
+      "ema_cos_sim": 0.1609989003982246,
       "ema_threshold": -0.1,
       "conflict_ratio": 0.0
     }
   },
   {
     "epoch": 4,
-    "time_seconds": 295.11,
+    "time_seconds": 210.6,
     "train": {
-      "total_loss": 0.9033505916595459,
-      "ctr_loss": 0.5804553452660056,
-      "cvr_loss": 0.2635093725779477,
-      "mask_loss": 0.6040405771311592,
-      "load_balance_loss": 0.2440757015172173,
-      "num_batches": 17,
+      "total_loss": 0.8740384915295769,
+      "ctr_loss": 0.5805772528928869,
+      "cvr_loss": 0.2656457138412139,
+      "mask_loss": 0.4111800046528087,
+      "load_balance_loss": 0.32378581078613505,
+      "num_batches": 85,
       "conflict_count": 0,
-      "avg_cos_sim": 0.0,
-      "train_ctr_auc": 0.5519410465623317,
-      "train_cvr_auc": 0.5981025050100378,
-      "task_weight_ctr": 0.9895607829093933,
-      "task_weight_cvr": 1.0132120847702026,
-      "log_sigma_ctr": 0.005247042514383793,
-      "log_sigma_cvr": -0.006562778260558844
+      "avg_cos_sim": 0.37755024433135986,
+      "train_ctr_auc": 0.5296564050627546,
+      "train_cvr_auc": 0.5535256517861621,
+      "task_weight_ctr": 0.9479057788848877,
+      "task_weight_cvr": 1.0696332454681396,
+      "log_sigma_ctr": 0.026750076562166214,
+      "log_sigma_cvr": -0.03365790843963623
     },
     "val": {
-      "val_loss": 0.8563919961452484,
-      "ctr_auc": 0.49904705646380104,
-      "cvr_auc": 0.49764318164421356,
-      "total_auc": 0.4983451190540073,
-      "ctr_logloss": 0.5899270367849058,
-      "cvr_logloss": 0.2705850481676373
+      "val_loss": 0.8282328963279724,
+      "ctr_auc": 0.5083160270918066,
+      "cvr_auc": 0.5150258478781158,
+      "total_auc": 0.5116709374849612,
+      "ctr_logloss": 0.5812581662291195,
+      "cvr_logloss": 0.265058508349427
     },
     "gate_temperatures": [
       [
-        1.6290124999999998,
-        1.6290124999999998
+        1.8447363199999998,
+        1.8447363199999998
       ],
       [
-        1.6290124999999998,
-        1.6290124999999998
+        1.8447363199999998,
+        1.8447363199999998
+      ],
+      [
+        1.8447363199999998,
+        1.8447363199999998
       ]
     ],
     "expert_collapse": {
       "collapsed": false,
       "collapsed_tasks": [],
       "max_utilization_per_task": [
-        0.3445083200931549,
-        0.3441108167171478
+        0.20204970240592957,
+        0.2028944045305252
       ],
       "utilization_matrix": [
         [
-          0.3343879282474518,
-          0.3445083200931549,
-          0.3211037516593933
+          0.20204970240592957,
+          0.20165184140205383,
+          0.20074085891246796,
+          0.19743771851062775,
+          0.1981199085712433
         ],
         [
-          0.3441108167171478,
-          0.33231380581855774,
-          0.32357537746429443
+          0.20023271441459656,
+          0.2013014554977417,
+          0.2028944045305252,
+          0.19749295711517334,
+          0.19807849824428558
         ]
       ]
     },
     "early_stopping": {
       "should_stop": false,
-      "best_score": 0.4998253398232683,
-      "best_epoch": 1,
-      "patience_counter": 2,
+      "best_score": 0.5116709374849612,
+      "best_epoch": 3,
+      "patience_counter": 0,
       "effective_patience": 15,
       "diagnosis": {
         "ctr": "WARMING_UP - Not enough data",
         "cvr": "WARMING_UP - Not enough data"
       }
     },
-    "learning_rate": 0.000657963412215599,
+    "learning_rate": 0.0009572050015330874,
     "conflict_detector": {
-      "ema_cos_sim": 0.03036091923713684,
+      "ema_cos_sim": 0.18265403479153813,
       "ema_threshold": -0.1,
       "conflict_ratio": 0.0
     }
   },
   {
     "epoch": 5,
-    "time_seconds": 172.03,
+    "time_seconds": 65.56,
     "train": {
-      "total_loss": 0.8929766100995681,
-      "ctr_loss": 0.5749038247501149,
-      "cvr_loss": 0.2612205375643337,
-      "mask_loss": 0.5925994515419006,
-      "load_balance_loss": 0.17767290683353648,
-      "num_batches": 17,
+      "total_loss": 0.8645439407404731,
+      "ctr_loss": 0.5789998846895554,
+      "cvr_loss": 0.2640202005119885,
+      "mask_loss": 0.36968064693843616,
+      "load_balance_loss": 0.5200587931801292,
+      "num_batches": 85,
       "conflict_count": 0,
-      "avg_cos_sim": 0.0,
-      "train_ctr_auc": 0.5692163106701704,
-      "train_cvr_auc": 0.6181697468772304,
-      "task_weight_ctr": 0.9880432486534119,
-      "task_weight_cvr": 1.0156909227371216,
-      "log_sigma_ctr": 0.006014401093125343,
-      "log_sigma_cvr": -0.007784571498632431
+      "avg_cos_sim": 0.7611189186573029,
+      "train_ctr_auc": 0.5436100141603956,
+      "train_cvr_auc": 0.5768528810839115,
+      "task_weight_ctr": 0.9372900724411011,
+      "task_weight_cvr": 1.0867284536361694,
+      "log_sigma_ctr": 0.03238122910261154,
+      "log_sigma_cvr": -0.041585907340049744
     },
     "val": {
-      "val_loss": 0.8561603426933289,
-      "ctr_auc": 0.4987944614040258,
-      "cvr_auc": 0.4995399507064269,
-      "total_auc": 0.49916720605522635,
-      "ctr_logloss": 0.5905646253201197,
-      "cvr_logloss": 0.2703935286565303
+      "val_loss": 0.8254588365554809,
+      "ctr_auc": 0.5126579448560563,
+      "cvr_auc": 0.5194831410243937,
+      "total_auc": 0.516070542940225,
+      "ctr_logloss": 0.581669084940961,
+      "cvr_logloss": 0.26566795214084094
     },
     "gate_temperatures": [
       [
-        1.5475618749999998,
-        1.5475618749999998
+        1.8078415935999996,
+        1.8078415935999996
       ],
       [
-        1.5475618749999998,
-        1.5475618749999998
+        1.8078415935999996,
+        1.8078415935999996
+      ],
+      [
+        1.8078415935999996,
+        1.8078415935999996
       ]
     ],
     "expert_collapse": {
       "collapsed": false,
       "collapsed_tasks": [],
       "max_utilization_per_task": [
-        0.344064325094223,
-        0.3405147194862366
+        0.20280803740024567,
+        0.2038191854953766
       ],
       "utilization_matrix": [
         [
-          0.32885903120040894,
-          0.344064325094223,
-          0.32707664370536804
+          0.2013453245162964,
+          0.20280803740024567,
+          0.20153801143169403,
+          0.1974608302116394,
+          0.1968478411436081
         ],
         [
-          0.3405147194862366,
-          0.3310430347919464,
-          0.3284422755241394
+          0.201417475938797,
+          0.2038191854953766,
+          0.20191365480422974,
+          0.19673579931259155,
+          0.19611389935016632
         ]
       ]
     },
     "early_stopping": {
       "should_stop": false,
-      "best_score": 0.4998253398232683,
-      "best_epoch": 1,
-      "patience_counter": 3,
+      "best_score": 0.516070542940225,
+      "best_epoch": 4,
+      "patience_counter": 0,
       "effective_patience": 15,
       "diagnosis": {
-        "ctr": "IMPROVING - CTR AUC trending up (slope=0.002805)",
-        "cvr": "IMPROVING - CVR AUC trending up (slope=0.003863)"
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.002761)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.005374)"
       }
     },
-    "learning_rate": 0.000505,
+    "learning_rate": 0.0009336825748732973,
     "conflict_detector": {
-      "ema_cos_sim": 0.03036091923713684,
+      "ema_cos_sim": 0.22027121293097804,
       "ema_threshold": -0.1,
       "conflict_ratio": 0.0
     }
   },
   {
     "epoch": 6,
-    "time_seconds": 172.52,
+    "time_seconds": 54.61,
     "train": {
-      "total_loss": 0.8849634002236759,
-      "ctr_loss": 0.5705609216409571,
-      "cvr_loss": 0.25938161331064563,
-      "mask_loss": 0.5842930499245139,
-      "load_balance_loss": 0.13655202441355763,
-      "num_batches": 17,
+      "total_loss": 0.8541063014198752,
+      "ctr_loss": 0.5775174856185913,
+      "cvr_loss": 0.2623787194490433,
+      "mask_loss": 0.33690179586410524,
+      "load_balance_loss": 0.501348254961126,
+      "num_batches": 85,
       "conflict_count": 0,
-      "avg_cos_sim": 0.3637133240699768,
-      "train_ctr_auc": 0.5870849787658018,
-      "train_cvr_auc": 0.6396786842777179,
-      "task_weight_ctr": 0.9868592619895935,
-      "task_weight_cvr": 1.017662763595581,
-      "log_sigma_ctr": 0.006613920908421278,
-      "log_sigma_cvr": -0.008754309266805649
+      "avg_cos_sim": 0.835637241601944,
+      "train_ctr_auc": 0.5553212356755477,
+      "train_cvr_auc": 0.5990642850626543,
+      "task_weight_ctr": 0.9280611872673035,
+      "task_weight_cvr": 1.1036546230316162,
+      "log_sigma_ctr": 0.037328820675611496,
+      "log_sigma_cvr": -0.04931352287530899
     },
     "val": {
-      "val_loss": 0.857390820980072,
-      "ctr_auc": 0.5010878204478093,
-      "cvr_auc": 0.5034356790520871,
-      "total_auc": 0.5022617497499482,
-      "ctr_logloss": 0.5914177734339704,
-      "cvr_logloss": 0.2713295160528005
+      "val_loss": 0.8225264191627503,
+      "ctr_auc": 0.5198015215453172,
+      "cvr_auc": 0.5364843941133358,
+      "total_auc": 0.5281429578293265,
+      "ctr_logloss": 0.5823629774286323,
+      "cvr_logloss": 0.2658978671872305
     },
     "gate_temperatures": [
       [
-        1.4701837812499996,
-        1.4701837812499996
+        1.7716847617279996,
+        1.7716847617279996
       ],
       [
-        1.4701837812499996,
-        1.4701837812499996
+        1.7716847617279996,
+        1.7716847617279996
+      ],
+      [
+        1.7716847617279996,
+        1.7716847617279996
       ]
     ],
     "expert_collapse": {
       "collapsed": false,
       "collapsed_tasks": [],
       "max_utilization_per_task": [
-        0.34022942185401917,
-        0.33732956647872925
+        0.20424775779247284,
+        0.2029910683631897
       ],
       "utilization_matrix": [
         [
-          0.3375111222267151,
-          0.34022942185401917,
-          0.32225948572158813
+          0.20308533310890198,
+          0.20424775779247284,
+          0.20363925397396088,
+          0.1938827633857727,
+          0.19514498114585876
         ],
         [
-          0.3350520133972168,
-          0.33732956647872925,
-          0.32761842012405396
+          0.2029910683631897,
+          0.20256374776363373,
+          0.2027701437473297,
+          0.19513432681560516,
+          0.19654062390327454
         ]
       ]
     },
     "early_stopping": {
       "should_stop": false,
-      "best_score": 0.5022617497499482,
+      "best_score": 0.5281429578293265,
       "best_epoch": 5,
       "patience_counter": 0,
       "effective_patience": 15,
       "diagnosis": {
-        "ctr": "IMPROVING - CTR AUC trending up (slope=0.001113)",
-        "cvr": "DEGRADING - CVR AUC trending down (slope=-0.000125)"
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.004728)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.008551)"
       }
     },
-    "learning_rate": 0.0003520365877844011,
+    "learning_rate": 0.0009054634122155991,
     "conflict_detector": {
-      "ema_cos_sim": 0.06369615972042084,
-      "ema_threshold": -0.1,
+      "ema_cos_sim": 0.25777084598060007,
+      "ema_threshold": -0.02115692467501787,
       "conflict_ratio": 0.0
     }
   },
   {
     "epoch": 7,
-    "time_seconds": 56.92,
+    "time_seconds": 43.07,
     "train": {
-      "total_loss": 0.8792730008854586,
-      "ctr_loss": 0.5678550460759331,
-      "cvr_loss": 0.2570750362732831,
-      "mask_loss": 0.5784714958247017,
-      "load_balance_loss": 0.17455173459123163,
-      "num_batches": 17,
+      "total_loss": 0.8436522119185503,
+      "ctr_loss": 0.5750846799682169,
+      "cvr_loss": 0.2598971745547126,
+      "mask_loss": 0.3107558962176828,
+      "load_balance_loss": 0.5719302170416888,
+      "num_batches": 85,
       "conflict_count": 0,
-      "avg_cos_sim": 0.0,
-      "train_ctr_auc": 0.5997297612619594,
-      "train_cvr_auc": 0.6641279809207838,
-      "task_weight_ctr": 0.9859877824783325,
-      "task_weight_cvr": 1.0191386938095093,
-      "log_sigma_ctr": 0.007055661641061306,
-      "log_sigma_cvr": -0.009478938765823841
+      "avg_cos_sim": 0.4069550335407257,
+      "train_ctr_auc": 0.5701867520915435,
+      "train_cvr_auc": 0.6241728111374831,
+      "task_weight_ctr": 0.920214831829071,
+      "task_weight_cvr": 1.1203407049179077,
+      "log_sigma_ctr": 0.04157406464219093,
+      "log_sigma_cvr": -0.05681644007563591
     },
     "val": {
-      "val_loss": 0.8579874038696289,
-      "ctr_auc": 0.5010139474557121,
-      "cvr_auc": 0.4998363410076085,
-      "total_auc": 0.5004251442316603,
-      "ctr_logloss": 0.5920678673581603,
-      "cvr_logloss": 0.27161837690785773
+      "val_loss": 0.822640722990036,
+      "ctr_auc": 0.5228647688494423,
+      "cvr_auc": 0.5382970741800116,
+      "total_auc": 0.530580921514727,
+      "ctr_logloss": 0.5841728729659272,
+      "cvr_logloss": 0.2675950980964322
     },
     "gate_temperatures": [
       [
-        1.3966745921874995,
-        1.3966745921874995
+        1.7362510664934396,
+        1.7362510664934396
       ],
       [
-        1.3966745921874995,
-        1.3966745921874995
+        1.7362510664934396,
+        1.7362510664934396
+      ],
+      [
+        1.7362510664934396,
+        1.7362510664934396
       ]
     ],
     "expert_collapse": {
       "collapsed": false,
       "collapsed_tasks": [],
       "max_utilization_per_task": [
-        0.34242942929267883,
-        0.3381164073944092
+        0.20307090878486633,
+        0.2049412876367569
       ],
       "utilization_matrix": [
         [
-          0.34242942929267883,
-          0.3372195065021515,
-          0.3203510344028473
+          0.202285036444664,
+          0.20307090878486633,
+          0.20272834599018097,
+          0.19587168097496033,
+          0.1960439682006836
         ],
         [
-          0.33664143085479736,
-          0.3381164073944092,
-          0.32524216175079346
+          0.2049412876367569,
+          0.20152543485164642,
+          0.20221644639968872,
+          0.19562962651252747,
+          0.19568723440170288
         ]
       ]
     },
     "early_stopping": {
       "should_stop": false,
-      "best_score": 0.5022617497499482,
-      "best_epoch": 5,
-      "patience_counter": 1,
+      "best_score": 0.530580921514727,
+      "best_epoch": 6,
+      "patience_counter": 0,
       "effective_patience": 15,
       "diagnosis": {
-        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000900)",
-        "cvr": "CONVERGED - CVR AUC stable"
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.005010)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.008783)"
       }
     },
-    "learning_rate": 0.00021404630011522585,
+    "learning_rate": 0.0008728566886113102,
     "conflict_detector": {
-      "ema_cos_sim": 0.06369615972042084,
-      "ema_threshold": -0.1,
+      "ema_cos_sim": 0.27268926473661265,
+      "ema_threshold": 0.012780175215111687,
       "conflict_ratio": 0.0
     }
   },
   {
     "epoch": 8,
-    "time_seconds": 23.25,
+    "time_seconds": 56.39,
     "train": {
-      "total_loss": 0.8744943457491258,
-      "ctr_loss": 0.5658747729133157,
-      "cvr_loss": 0.25512514833141775,
-      "mask_loss": 0.575048523790696,
-      "load_balance_loss": 0.15890300536856933,
-      "num_batches": 17,
+      "total_loss": 0.8327684044837952,
+      "ctr_loss": 0.5721259243348066,
+      "cvr_loss": 0.25689279577311347,
+      "mask_loss": 0.28986198832007015,
+      "load_balance_loss": 0.6340547863174887,
+      "num_batches": 85,
       "conflict_count": 0,
-      "avg_cos_sim": 0.0,
-      "train_ctr_auc": 0.6056327197659516,
-      "train_cvr_auc": 0.6760869910586026,
-      "task_weight_ctr": 0.9853875041007996,
-      "task_weight_cvr": 1.0201739072799683,
-      "log_sigma_ctr": 0.007360149174928665,
-      "log_sigma_cvr": -0.009986580349504948
+      "avg_cos_sim": 0.8594853281974792,
+      "train_ctr_auc": 0.5846105128951762,
+      "train_cvr_auc": 0.6485313951356769,
+      "task_weight_ctr": 0.9138652682304382,
+      "task_weight_cvr": 1.1367416381835938,
+      "log_sigma_ctr": 0.04503607749938965,
+      "log_sigma_cvr": -0.06408300250768661
     },
     "val": {
-      "val_loss": 0.8590818047523499,
-      "ctr_auc": 0.5026443009108865,
-      "cvr_auc": 0.502069964090382,
-      "total_auc": 0.5023571325006342,
-      "ctr_logloss": 0.5928909743395488,
-      "cvr_logloss": 0.2722093843934545
+      "val_loss": 0.8211431264877319,
+      "ctr_auc": 0.5228184635764966,
+      "cvr_auc": 0.5406999202225984,
+      "total_auc": 0.5317591918995475,
+      "ctr_logloss": 0.5850336131305706,
+      "cvr_logloss": 0.26834697500288845
     },
     "gate_temperatures": [
       [
-        1.3268408625781245,
-        1.3268408625781245
+        1.7015260451635708,
+        1.7015260451635708
       ],
       [
-        1.3268408625781245,
-        1.3268408625781245
+        1.7015260451635708,
+        1.7015260451635708
+      ],
+      [
+        1.7015260451635708,
+        1.7015260451635708
       ]
     ],
     "expert_collapse": {
       "collapsed": false,
       "collapsed_tasks": [],
       "max_utilization_per_task": [
-        0.33934375643730164,
-        0.3404751121997833
+        0.20491471886634827,
+        0.20455028116703033
       ],
       "utilization_matrix": [
         [
-          0.33934375643730164,
-          0.33857569098472595,
-          0.3220805525779724
+          0.20403428375720978,
+          0.20433752238750458,
+          0.20491471886634827,
+          0.19356097280979156,
+          0.1931525021791458
         ],
         [
-          0.3366619348526001,
-          0.3404751121997833,
-          0.3228629231452942
+          0.20455028116703033,
+          0.20361968874931335,
+          0.20345701277256012,
+          0.1944839060306549,
+          0.19388915598392487
         ]
       ]
     },
     "early_stopping": {
       "should_stop": false,
-      "best_score": 0.5022617497499482,
-      "best_epoch": 5,
-      "patience_counter": 2,
+      "best_score": 0.5317591918995475,
+      "best_epoch": 7,
+      "patience_counter": 0,
       "effective_patience": 15,
       "diagnosis": {
-        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000941)",
-        "cvr": "IMPROVING - CVR AUC trending up (slope=0.000915)"
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.003921)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.007016)"
       }
     },
-    "learning_rate": 0.00010453658778440107,
+    "learning_rate": 0.0008362196501476349,
     "conflict_detector": {
-      "ema_cos_sim": 0.06369615972042084,
-      "ema_threshold": -0.1,
+      "ema_cos_sim": 0.30270882506653907,
+      "ema_threshold": 0.07120502573470688,
       "conflict_ratio": 0.0
     }
   },
   {
     "epoch": 9,
-    "time_seconds": 33.35,
+    "time_seconds": 40.76,
     "train": {
-      "total_loss": 0.8714248397771049,
-      "ctr_loss": 0.5641745118533864,
-      "cvr_loss": 0.2539549224516925,
-      "mask_loss": 0.5729768942384159,
-      "load_balance_loss": 0.1829492572475882,
-      "num_batches": 17,
+      "total_loss": 0.8230803966522217,
+      "ctr_loss": 0.5690613003338084,
+      "cvr_loss": 0.2534692017471089,
+      "mask_loss": 0.27325786492403814,
+      "load_balance_loss": 0.8140257586451137,
+      "num_batches": 85,
       "conflict_count": 0,
-      "avg_cos_sim": 0.0,
-      "train_ctr_auc": 0.6134701512108168,
-      "train_cvr_auc": 0.6856318585833778,
-      "task_weight_ctr": 0.9849965572357178,
-      "task_weight_cvr": 1.0208408832550049,
-      "log_sigma_ctr": 0.007558558601886034,
-      "log_sigma_cvr": -0.010313316248357296
+      "avg_cos_sim": 0.8727036118507385,
+      "train_ctr_auc": 0.5978525346321213,
+      "train_cvr_auc": 0.6711393115437085,
+      "task_weight_ctr": 0.9088804721832275,
+      "task_weight_cvr": 1.1527905464172363,
+      "log_sigma_ctr": 0.04777084290981293,
+      "log_sigma_cvr": -0.07109276950359344
     },
     "val": {
-      "val_loss": 0.8596928715705872,
-      "ctr_auc": 0.5034507176381883,
-      "cvr_auc": 0.5021045000037371,
-      "total_auc": 0.5027776088209627,
-      "ctr_logloss": 0.5933230090456267,
-      "cvr_logloss": 0.2725812064598129
+      "val_loss": 0.8189816772937775,
+      "ctr_auc": 0.5282186162852343,
+      "cvr_auc": 0.5450441694394178,
+      "total_auc": 0.5366313928623261,
+      "ctr_logloss": 0.5844696989702707,
+      "cvr_logloss": 0.26921299979892327
     },
     "gate_temperatures": [
       [
-        1.2604988194492182,
-        1.2604988194492182
+        1.6674955242602993,
+        1.6674955242602993
       ],
       [
-        1.2604988194492182,
-        1.2604988194492182
+        1.6674955242602993,
+        1.6674955242602993
+      ],
+      [
+        1.6674955242602993,
+        1.6674955242602993
       ]
     ],
     "expert_collapse": {
       "collapsed": false,
       "collapsed_tasks": [],
       "max_utilization_per_task": [
-        0.33974596858024597,
-        0.3405631482601166
+        0.20586472749710083,
+        0.20618794858455658
       ],
       "utilization_matrix": [
         [
-          0.33885321021080017,
-          0.33974596858024597,
-          0.32140085101127625
+          0.2047358602285385,
+          0.20586472749710083,
+          0.20398013293743134,
+          0.1919144093990326,
+          0.19350489974021912
         ],
         [
-          0.3405631482601166,
-          0.3398324251174927,
-          0.31960442662239075
+          0.20516055822372437,
+          0.20618794858455658,
+          0.20218001306056976,
+          0.19279557466506958,
+          0.1936759501695633
         ]
       ]
     },
     "early_stopping": {
       "should_stop": false,
-      "best_score": 0.5027776088209627,
+      "best_score": 0.5366313928623261,
       "best_epoch": 8,
       "patience_counter": 0,
       "effective_patience": 15,
       "diagnosis": {
-        "ctr": "IMPROVING - CTR AUC trending up (slope=0.001087)",
-        "cvr": "CONVERGED - CVR AUC stable"
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.003414)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.005534)"
       }
     },
-    "learning_rate": 3.4227024433899005e-05,
+    "learning_rate": 0.0007959536998847742,
     "conflict_detector": {
-      "ema_cos_sim": 0.06369615972042084,
-      "ema_threshold": -0.1,
+      "ema_cos_sim": 0.3282147996443813,
+      "ema_threshold": 0.11903164291989853,
       "conflict_ratio": 0.0
     }
   },
   {
     "epoch": 10,
-    "time_seconds": 24.99,
+    "time_seconds": 58.78,
     "train": {
-      "total_loss": 0.8701048984247095,
-      "ctr_loss": 0.5635417068705839,
-      "cvr_loss": 0.25362322435659523,
-      "mask_loss": 0.5722665541312274,
-      "load_balance_loss": 0.16929479644579046,
-      "num_batches": 17,
+      "total_loss": 0.8131805987919078,
+      "ctr_loss": 0.565920029668247,
+      "cvr_loss": 0.24997597599730773,
+      "mask_loss": 0.25954303180470184,
+      "load_balance_loss": 0.945753730395261,
+      "num_batches": 85,
       "conflict_count": 0,
-      "avg_cos_sim": 0.0,
-      "train_ctr_auc": 0.6149544958710892,
-      "train_cvr_auc": 0.6847301820346836,
-      "task_weight_ctr": 0.9847319722175598,
-      "task_weight_cvr": 1.0212796926498413,
-      "log_sigma_ctr": 0.007692886050790548,
-      "log_sigma_cvr": -0.01052821520715952
+      "avg_cos_sim": 0.41708430647850037,
+      "train_ctr_auc": 0.610671430986992,
+      "train_cvr_auc": 0.692758563518815,
+      "task_weight_ctr": 0.9052228331565857,
+      "task_weight_cvr": 1.168479561805725,
+      "log_sigma_ctr": 0.04978707805275917,
+      "log_sigma_cvr": -0.07785168290138245
     },
     "val": {
-      "val_loss": 0.8597184419631958,
-      "ctr_auc": 0.5034858931032518,
-      "cvr_auc": 0.5015722861150937,
-      "total_auc": 0.5025290896091728,
-      "ctr_logloss": 0.5934181414038722,
-      "cvr_logloss": 0.2726321734266371
+      "val_loss": 0.827205628156662,
+      "ctr_auc": 0.5269132822084582,
+      "cvr_auc": 0.5475026521121553,
+      "total_auc": 0.5372079671603067,
+      "ctr_logloss": 0.5900631577622412,
+      "cvr_logloss": 0.27413712296425036
     },
     "gate_temperatures": [
       [
-        1.1974738784767571,
-        1.1974738784767571
+        1.6341456137750934,
+        1.6341456137750934
       ],
       [
-        1.1974738784767571,
-        1.1974738784767571
+        1.6341456137750934,
+        1.6341456137750934
+      ],
+      [
+        1.6341456137750934,
+        1.6341456137750934
       ]
     ],
     "expert_collapse": {
       "collapsed": false,
       "collapsed_tasks": [],
       "max_utilization_per_task": [
-        0.3398866057395935,
-        0.34259167313575745
+        0.20575286448001862,
+        0.2063734382390976
       ],
       "utilization_matrix": [
         [
-          0.3397299647331238,
-          0.3398866057395935,
-          0.3203833997249603
+          0.20575286448001862,
+          0.20477896928787231,
+          0.20568349957466125,
+          0.19064629077911377,
+          0.1931382715702057
         ],
         [
-          0.34259167313575745,
-          0.33903759717941284,
-          0.31837067008018494
+          0.20603163540363312,
+          0.2063734382390976,
+          0.2042655199766159,
+          0.1900513619184494,
+          0.19327805936336517
         ]
       ]
     },
     "early_stopping": {
       "should_stop": false,
-      "best_score": 0.5027776088209627,
-      "best_epoch": 8,
+      "best_score": 0.5372079671603067,
+      "best_epoch": 9,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.001958)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.002878)"
+      }
+    },
+    "learning_rate": 0.0007525,
+    "conflict_detector": {
+      "ema_cos_sim": 0.3371017503277932,
+      "ema_threshold": 0.1397374958770264,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 11,
+    "time_seconds": 53.43,
+    "train": {
+      "total_loss": 0.8001698571092942,
+      "ctr_loss": 0.5621627604260164,
+      "cvr_loss": 0.24505110120072085,
+      "mask_loss": 0.24887030527872198,
+      "load_balance_loss": 0.9496696605401881,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.8372242152690887,
+      "train_ctr_auc": 0.6226591915794714,
+      "train_cvr_auc": 0.7164399423483683,
+      "task_weight_ctr": 0.9029346108436584,
+      "task_weight_cvr": 1.1837286949157715,
+      "log_sigma_ctr": 0.05105256289243698,
+      "log_sigma_cvr": -0.08433467894792557
+    },
+    "val": {
+      "val_loss": 0.8231642782688141,
+      "ctr_auc": 0.532272074174216,
+      "cvr_auc": 0.5518641773522983,
+      "total_auc": 0.5420681257632571,
+      "ctr_logloss": 0.5879678826921088,
+      "cvr_logloss": 0.2742462374479545
+    },
+    "gate_temperatures": [
+      [
+        1.6014627014995915,
+        1.6014627014995915
+      ],
+      [
+        1.6014627014995915,
+        1.6014627014995915
+      ],
+      [
+        1.6014627014995915,
+        1.6014627014995915
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.206340029835701,
+        0.20551548898220062
+      ],
+      "utilization_matrix": [
+        [
+          0.206340029835701,
+          0.20624826848506927,
+          0.20618312060832977,
+          0.19050908088684082,
+          0.19071950018405914
+        ],
+        [
+          0.20551548898220062,
+          0.2045702487230301,
+          0.2049078792333603,
+          0.19348356127738953,
+          0.19152286648750305
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5420681257632571,
+      "best_epoch": 10,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.002291)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.003394)"
+      }
+    },
+    "learning_rate": 0.0007063346383225212,
+    "conflict_detector": {
+      "ema_cos_sim": 0.3527369536265279,
+      "ema_threshold": 0.17579480870329564,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 12,
+    "time_seconds": 43.71,
+    "train": {
+      "total_loss": 0.7868830842130324,
+      "ctr_loss": 0.5578331063775456,
+      "cvr_loss": 0.2404323919731028,
+      "mask_loss": 0.24037982120233423,
+      "load_balance_loss": 0.914547373266781,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.8743230700492859,
+      "train_ctr_auc": 0.6353519038138022,
+      "train_cvr_auc": 0.7362047417183158,
+      "task_weight_ctr": 0.9019107818603516,
+      "task_weight_cvr": 1.1984890699386597,
+      "log_sigma_ctr": 0.05161985382437706,
+      "log_sigma_cvr": -0.09053082019090652
+    },
+    "val": {
+      "val_loss": 0.828369677066803,
+      "ctr_auc": 0.5308751980612901,
+      "cvr_auc": 0.5539882746677564,
+      "total_auc": 0.5424317363645232,
+      "ctr_logloss": 0.5919746361668695,
+      "cvr_logloss": 0.27783424343559937
+    },
+    "gate_temperatures": [
+      [
+        1.5694334474695997,
+        1.5694334474695997
+      ],
+      [
+        1.5694334474695997,
+        1.5694334474695997
+      ],
+      [
+        1.5694334474695997,
+        1.5694334474695997
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.20796625316143036,
+        0.206802099943161
+      ],
+      "utilization_matrix": [
+        [
+          0.20653854310512543,
+          0.20679272711277008,
+          0.20796625316143036,
+          0.187848761677742,
+          0.1908537596464157
+        ],
+        [
+          0.20674511790275574,
+          0.206802099943161,
+          0.20522426068782806,
+          0.18957704305648804,
+          0.19165149331092834
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5424317363645232,
+      "best_epoch": 11,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.002017)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.003340)"
+      }
+    },
+    "learning_rate": 0.000657963412215599,
+    "conflict_detector": {
+      "ema_cos_sim": 0.3688336625910483,
+      "ema_threshold": 0.20573502694947574,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 13,
+    "time_seconds": 53.85,
+    "train": {
+      "total_loss": 0.775641728849972,
+      "ctr_loss": 0.5533548677668853,
+      "cvr_loss": 0.23525763960445628,
+      "mask_loss": 0.23364713928278755,
+      "load_balance_loss": 1.1417874020688674,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.8556807637214661,
+      "train_ctr_auc": 0.6469875108408976,
+      "train_cvr_auc": 0.7572029822238983,
+      "task_weight_ctr": 0.90201336145401,
+      "task_weight_cvr": 1.212708592414856,
+      "log_sigma_ctr": 0.05156298354268074,
+      "log_sigma_cvr": -0.09642818570137024
+    },
+    "val": {
+      "val_loss": 0.8381210625171661,
+      "ctr_auc": 0.5320705379530608,
+      "cvr_auc": 0.554497487984745,
+      "total_auc": 0.5432840129689029,
+      "ctr_logloss": 0.5961468002133282,
+      "cvr_logloss": 0.2833731319233557
+    },
+    "gate_temperatures": [
+      [
+        1.5380447785202076,
+        1.5380447785202076
+      ],
+      [
+        1.5380447785202076,
+        1.5380447785202076
+      ],
+      [
+        1.5380447785202076,
+        1.5380447785202076
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.20931006968021393,
+        0.2100081592798233
+      ],
+      "utilization_matrix": [
+        [
+          0.20746584236621857,
+          0.20931006968021393,
+          0.20808811485767365,
+          0.18725493550300598,
+          0.1878810077905655
+        ],
+        [
+          0.20841532945632935,
+          0.2100081592798233,
+          0.20572012662887573,
+          0.187872514128685,
+          0.18798385560512543
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5432840129689029,
+      "best_epoch": 12,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.001167)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.002539)"
+      }
+    },
+    "learning_rate": 0.0006079162869547909,
+    "conflict_detector": {
+      "ema_cos_sim": 0.3802193650926662,
+      "ema_threshold": 0.23064835658134708,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 14,
+    "time_seconds": 41.76,
+    "train": {
+      "total_loss": 0.7630112030926872,
+      "ctr_loss": 0.5489142992917229,
+      "cvr_loss": 0.2296323059236302,
+      "mask_loss": 0.2283520965015187,
+      "load_balance_loss": 1.2649867934339187,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.4179813861846924,
+      "train_ctr_auc": 0.6576453989248215,
+      "train_cvr_auc": 0.7767052209699513,
+      "task_weight_ctr": 0.9031264781951904,
+      "task_weight_cvr": 1.2263261079788208,
+      "log_sigma_ctr": 0.05094633623957634,
+      "log_sigma_cvr": -0.10201137512922287
+    },
+    "val": {
+      "val_loss": 0.8472302675247192,
+      "ctr_auc": 0.5332984708035344,
+      "cvr_auc": 0.5566684178779211,
+      "total_auc": 0.5449834443407278,
+      "ctr_logloss": 0.5988023886294017,
+      "cvr_logloss": 0.2900171915542538
+    },
+    "gate_temperatures": [
+      [
+        1.5072838829498034,
+        1.5072838829498034
+      ],
+      [
+        1.5072838829498034,
+        1.5072838829498034
+      ],
+      [
+        1.5072838829498034,
+        1.5072838829498034
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.20875562727451324,
+        0.21031685173511505
+      ],
+      "utilization_matrix": [
+        [
+          0.20873606204986572,
+          0.20875562727451324,
+          0.2083301842212677,
+          0.18694035708904266,
+          0.18723773956298828
+        ],
+        [
+          0.21031685173511505,
+          0.20933520793914795,
+          0.20675654709339142,
+          0.18725986778736115,
+          0.1863315999507904
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5449834443407278,
+      "best_epoch": 13,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.001257)",
+        "cvr": "IMPROVING - CVR AUC trending up (slope=0.002096)"
+      }
+    },
+    "learning_rate": 0.0005567415893174886,
+    "conflict_detector": {
+      "ema_cos_sim": 0.38399556720186884,
+      "ema_threshold": 0.24152030147929635,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 15,
+    "time_seconds": 78.31,
+    "train": {
+      "total_loss": 0.7493766027338364,
+      "ctr_loss": 0.5445240315269021,
+      "cvr_loss": 0.22431711782427394,
+      "mask_loss": 0.2240902080255396,
+      "load_balance_loss": 1.2336435093599207,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.8403604328632355,
+      "train_ctr_auc": 0.6671242248260265,
+      "train_cvr_auc": 0.7922891966001351,
+      "task_weight_ctr": 0.9049748182296753,
+      "task_weight_cvr": 1.239214301109314,
+      "log_sigma_ctr": 0.04992407560348511,
+      "log_sigma_cvr": -0.1072387620806694
+    },
+    "val": {
+      "val_loss": 0.8671919763088226,
+      "ctr_auc": 0.5324656131753778,
+      "cvr_auc": 0.5531865792358234,
+      "total_auc": 0.5428260962056006,
+      "ctr_logloss": 0.6064904354133657,
+      "cvr_logloss": 0.30093775296617
+    },
+    "gate_temperatures": [
+      [
+        1.4771382052908073,
+        1.4771382052908073
+      ],
+      [
+        1.4771382052908073,
+        1.4771382052908073
+      ],
+      [
+        1.4771382052908073,
+        1.4771382052908073
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.21037453413009644,
+        0.2097007930278778
+      ],
+      "utilization_matrix": [
+        [
+          0.2092302292585373,
+          0.21037453413009644,
+          0.2081860452890396,
+          0.1866038590669632,
+          0.18560534715652466
+        ],
+        [
+          0.2097007930278778,
+          0.20918172597885132,
+          0.20956362783908844,
+          0.18585792183876038,
+          0.18569594621658325
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5449834443407278,
+      "best_epoch": 13,
       "patience_counter": 1,
       "effective_patience": 15,
       "diagnosis": {
-        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000723)",
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000281)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 0.0005050000000000002,
+    "conflict_detector": {
+      "ema_cos_sim": 0.39080901473346347,
+      "ema_threshold": 0.2605944770041214,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 16,
+    "time_seconds": 62.76,
+    "train": {
+      "total_loss": 0.7363996940500596,
+      "ctr_loss": 0.5397005165324492,
+      "cvr_loss": 0.21833130629623637,
+      "mask_loss": 0.22028741503463073,
+      "load_balance_loss": 1.3835239985409904,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.7927908897399902,
+      "train_ctr_auc": 0.6773931065555893,
+      "train_cvr_auc": 0.8099621736995396,
+      "task_weight_ctr": 0.907789945602417,
+      "task_weight_cvr": 1.251438021659851,
+      "log_sigma_ctr": 0.04837113618850708,
+      "log_sigma_cvr": -0.11214666813611984
+    },
+    "val": {
+      "val_loss": 0.8620871841907501,
+      "ctr_auc": 0.5335952021905686,
+      "cvr_auc": 0.557414209457838,
+      "total_auc": 0.5455047058242033,
+      "ctr_logloss": 0.6023193686504773,
+      "cvr_logloss": 0.30089276677982874
+    },
+    "gate_temperatures": [
+      [
+        1.4475954411849912,
+        1.4475954411849912
+      ],
+      [
+        1.4475954411849912,
+        1.4475954411849912
+      ],
+      [
+        1.4475954411849912,
+        1.4475954411849912
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.2124055027961731,
+        0.21169926226139069
+      ],
+      "utilization_matrix": [
+        [
+          0.21114374697208405,
+          0.2124055027961731,
+          0.20895232260227203,
+          0.1839299499988556,
+          0.18356847763061523
+        ],
+        [
+          0.21055614948272705,
+          0.21169926226139069,
+          0.20812959969043732,
+          0.18564772605895996,
+          0.18396730720996857
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 0,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000584)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 0.0004532584106825117,
+    "conflict_detector": {
+      "ema_cos_sim": 0.39167754092775015,
+      "ema_threshold": 0.27644309727764266,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 17,
+    "time_seconds": 50.92,
+    "train": {
+      "total_loss": 0.7231031880659216,
+      "ctr_loss": 0.5357259953723235,
+      "cvr_loss": 0.21226800294483408,
+      "mask_loss": 0.21759791794945213,
+      "load_balance_loss": 1.4218944037661834,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.4080180525779724,
+      "train_ctr_auc": 0.6840758899994239,
+      "train_cvr_auc": 0.8244582852028743,
+      "task_weight_ctr": 0.9108869433403015,
+      "task_weight_cvr": 1.262906789779663,
+      "log_sigma_ctr": 0.04666823893785477,
+      "log_sigma_cvr": -0.11670800298452377
+    },
+    "val": {
+      "val_loss": 0.867081093788147,
+      "ctr_auc": 0.5326604399377478,
+      "cvr_auc": 0.5546648518929297,
+      "total_auc": 0.5436626459153387,
+      "ctr_logloss": 0.6063405456960534,
+      "cvr_logloss": 0.3025986505872334
+    },
+    "gate_temperatures": [
+      [
+        1.4186435323612914,
+        1.4186435323612914
+      ],
+      [
+        1.4186435323612914,
+        1.4186435323612914
+      ],
+      [
+        1.4186435323612914,
+        1.4186435323612914
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.2127574235200882,
+        0.21156783401966095
+      ],
+      "utilization_matrix": [
+        [
+          0.2127574235200882,
+          0.2106700837612152,
+          0.20977850258350372,
+          0.1832657903432846,
+          0.18352825939655304
+        ],
+        [
+          0.21156783401966095,
+          0.2097988724708557,
+          0.20884498953819275,
+          0.1841563582420349,
+          0.18563197553157806
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 1,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000148)",
+        "cvr": "OSCILLATING - CVR unstable (sign_changes=3, std=0.0015)"
+      }
+    },
+    "learning_rate": 0.00040208371304520916,
+    "conflict_detector": {
+      "ema_cos_sim": 0.3933115920927724,
+      "ema_threshold": 0.2833105380953991,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 18,
+    "time_seconds": 54.66,
+    "train": {
+      "total_loss": 0.7130891470348134,
+      "ctr_loss": 0.5314841578988468,
+      "cvr_loss": 0.2081156914725023,
+      "mask_loss": 0.21538945015738992,
+      "load_balance_loss": 1.5625635932473576,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.8544795215129852,
+      "train_ctr_auc": 0.6918851659806895,
+      "train_cvr_auc": 0.8350554675625858,
+      "task_weight_ctr": 0.9143702983856201,
+      "task_weight_cvr": 1.2734041213989258,
+      "log_sigma_ctr": 0.04475982487201691,
+      "log_sigma_cvr": -0.12084684520959854
+    },
+    "val": {
+      "val_loss": 0.8761876463890076,
+      "ctr_auc": 0.5322379541881812,
+      "cvr_auc": 0.5525121514603156,
+      "total_auc": 0.5423750528242484,
+      "ctr_logloss": 0.6081870349003038,
+      "cvr_logloss": 0.3089320940070873
+    },
+    "gate_temperatures": [
+      [
+        1.3902706617140654,
+        1.3902706617140654
+      ],
+      [
+        1.3902706617140654,
+        1.3902706617140654
+      ],
+      [
+        1.3902706617140654,
+        1.3902706617140654
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.21336796879768372,
+        0.21309030055999756
+      ],
+      "utilization_matrix": [
+        [
+          0.21336796879768372,
+          0.2116110920906067,
+          0.21151968836784363,
+          0.1823703646659851,
+          0.18113087117671967
+        ],
+        [
+          0.21077795326709747,
+          0.21309030055999756,
+          0.2107435166835785,
+          0.1833602786064148,
+          0.18202795088291168
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 2,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "DEGRADING - CTR AUC trending down (slope=-0.000193)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 0.00035203658778440114,
+    "conflict_detector": {
+      "ema_cos_sim": 0.39977720999919847,
+      "ema_threshold": 0.2954365698793495,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 19,
+    "time_seconds": 108.21,
+    "train": {
+      "total_loss": 0.6990260341588188,
+      "ctr_loss": 0.5272775853381437,
+      "cvr_loss": 0.20237566653419944,
+      "mask_loss": 0.2134267956018448,
+      "load_balance_loss": 1.4868850679958567,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.8004076182842255,
+      "train_ctr_auc": 0.6985626424353857,
+      "train_cvr_auc": 0.8470263326747561,
+      "task_weight_ctr": 0.9179302453994751,
+      "task_weight_cvr": 1.2830604314804077,
+      "log_sigma_ctr": 0.04281693324446678,
+      "log_sigma_cvr": -0.1246241107583046
+    },
+    "val": {
+      "val_loss": 0.8881428301334381,
+      "ctr_auc": 0.5337460362826005,
+      "cvr_auc": 0.5550608811835593,
+      "total_auc": 0.5444034587330799,
+      "ctr_logloss": 0.6137132355372291,
+      "cvr_logloss": 0.3144636696252697
+    },
+    "gate_temperatures": [
+      [
+        1.3624652484797841,
+        1.3624652484797841
+      ],
+      [
+        1.3624652484797841,
+        1.3624652484797841
+      ],
+      [
+        1.3624652484797841,
+        1.3624652484797841
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.2123291939496994,
+        0.21294333040714264
+      ],
+      "utilization_matrix": [
+        [
+          0.2123291939496994,
+          0.211454376578331,
+          0.21029162406921387,
+          0.1836988925933838,
+          0.18222594261169434
+        ],
+        [
+          0.21263007819652557,
+          0.21294333040714264,
+          0.21059240400791168,
+          0.18236587941646576,
+          0.18146826326847076
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 3,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000120)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 0.00030366536167747904,
+    "conflict_detector": {
+      "ema_cos_sim": 0.39994862909719164,
+      "ema_threshold": 0.30555914041345195,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 20,
+    "time_seconds": 48.45,
+    "train": {
+      "total_loss": 0.6883854908101699,
+      "ctr_loss": 0.5236015228664174,
+      "cvr_loss": 0.1973844521185931,
+      "mask_loss": 0.21192720269455628,
+      "load_balance_loss": 1.5978638438617483,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.3981037437915802,
+      "train_ctr_auc": 0.70446602757006,
+      "train_cvr_auc": 0.8574335628180314,
+      "task_weight_ctr": 0.9216611981391907,
+      "task_weight_cvr": 1.2918428182601929,
+      "log_sigma_ctr": 0.040788788348436356,
+      "log_sigma_cvr": -0.12803485989570618
+    },
+    "val": {
+      "val_loss": 0.9010156154632568,
+      "ctr_auc": 0.5348445097846566,
+      "cvr_auc": 0.5560087327067889,
+      "total_auc": 0.5454266212457227,
+      "ctr_logloss": 0.613646984942333,
+      "cvr_logloss": 0.3250449565440674
+    },
+    "gate_temperatures": [
+      [
+        1.3352159435101885,
+        1.3352159435101885
+      ],
+      [
+        1.3352159435101885,
+        1.3352159435101885
+      ],
+      [
+        1.3352159435101885,
+        1.3352159435101885
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.2140531688928604,
+        0.21328671276569366
+      ],
+      "utilization_matrix": [
+        [
+          0.2140531688928604,
+          0.21274159848690033,
+          0.20963110029697418,
+          0.1816389560699463,
+          0.181935116648674
+        ],
+        [
+          0.21328671276569366,
+          0.21327528357505798,
+          0.21206124126911163,
+          0.1822025328874588,
+          0.1791742593050003
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 4,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000358)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 0.00025750000000000013,
+    "conflict_detector": {
+      "ema_cos_sim": 0.3997641405666305,
+      "ema_threshold": 0.3099886466397356,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 21,
+    "time_seconds": 49.8,
+    "train": {
+      "total_loss": 0.6758012470077066,
+      "ctr_loss": 0.5191697043531082,
+      "cvr_loss": 0.19184429207268883,
+      "mask_loss": 0.2106272658881019,
+      "load_balance_loss": 1.6450175355462466,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.8160542249679565,
+      "train_ctr_auc": 0.7113514146941754,
+      "train_cvr_auc": 0.8683138332266553,
+      "task_weight_ctr": 0.9253272414207458,
+      "task_weight_cvr": 1.2997419834136963,
+      "log_sigma_ctr": 0.03880390524864197,
+      "log_sigma_cvr": -0.1310829073190689
+    },
+    "val": {
+      "val_loss": 0.9098295152187348,
+      "ctr_auc": 0.5328535495335476,
+      "cvr_auc": 0.5522606697410153,
+      "total_auc": 0.5425571096372814,
+      "ctr_logloss": 0.6173464497425741,
+      "cvr_logloss": 0.3294310133253536
+    },
+    "gate_temperatures": [
+      [
+        1.3085116246399846,
+        1.3085116246399846
+      ],
+      [
+        1.3085116246399846,
+        1.3085116246399846
+      ],
+      [
+        1.3085116246399846,
+        1.3085116246399846
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.21441440284252167,
+        0.21416017413139343
+      ],
+      "utilization_matrix": [
+        [
+          0.21307700872421265,
+          0.21441440284252167,
+          0.21124328672885895,
+          0.18012145161628723,
+          0.1811438798904419
+        ],
+        [
+          0.21416017413139343,
+          0.21258126199245453,
+          0.21171195805072784,
+          0.18095916509628296,
+          0.180587500333786
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 5,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "IMPROVING - CTR AUC trending up (slope=0.000299)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 0.00021404630011522585,
+    "conflict_detector": {
+      "ema_cos_sim": 0.40148988137400066,
+      "ema_threshold": 0.3177483303194669,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 22,
+    "time_seconds": 47.28,
+    "train": {
+      "total_loss": 0.6675843456212212,
+      "ctr_loss": 0.516816981750376,
+      "cvr_loss": 0.18868441266172073,
+      "mask_loss": 0.20966688078992507,
+      "load_balance_loss": 1.6142724023145787,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.8032076954841614,
+      "train_ctr_auc": 0.714789813983377,
+      "train_cvr_auc": 0.8739394287451757,
+      "task_weight_ctr": 0.9288273453712463,
+      "task_weight_cvr": 1.3067299127578735,
+      "log_sigma_ctr": 0.03691621124744415,
+      "log_sigma_cvr": -0.1337638795375824
+    },
+    "val": {
+      "val_loss": 0.9207013726234436,
+      "ctr_auc": 0.5325201158148839,
+      "cvr_auc": 0.550818492790847,
+      "total_auc": 0.5416693043028655,
+      "ctr_logloss": 0.6201250212727369,
+      "cvr_logloss": 0.3357182012289356
+    },
+    "gate_temperatures": [
+      [
+        1.282341392147185,
+        1.282341392147185
+      ],
+      [
+        1.282341392147185,
+        1.282341392147185
+      ],
+      [
+        1.282341392147185,
+        1.282341392147185
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.21337763965129852,
+        0.2143055647611618
+      ],
+      "utilization_matrix": [
+        [
+          0.21167652308940887,
+          0.21337763965129852,
+          0.21279126405715942,
+          0.1807342767715454,
+          0.18142037093639374
+        ],
+        [
+          0.21325331926345825,
+          0.2143055647611618,
+          0.2126104235649109,
+          0.18156655132770538,
+          0.17826417088508606
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 6,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "DEGRADING - CTR AUC trending down (slope=-0.000033)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 0.00017378034985236535,
+    "conflict_detector": {
+      "ema_cos_sim": 0.4014939852903514,
+      "ema_threshold": 0.32432470953941606,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 23,
+    "time_seconds": 59.45,
+    "train": {
+      "total_loss": 0.6584191013784969,
+      "ctr_loss": 0.5134488901671241,
+      "cvr_loss": 0.1852116963442634,
+      "mask_loss": 0.208790801728473,
+      "load_balance_loss": 1.6092800042208504,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.7850789725780487,
+      "train_ctr_auc": 0.7199360329934132,
+      "train_cvr_auc": 0.8807095923453574,
+      "task_weight_ctr": 0.9320083856582642,
+      "task_weight_cvr": 1.3128546476364136,
+      "log_sigma_ctr": 0.03520672768354416,
+      "log_sigma_cvr": -0.13610193133354187
+    },
+    "val": {
+      "val_loss": 0.9360016226768494,
+      "ctr_auc": 0.5308452306616451,
+      "cvr_auc": 0.548179781941769,
+      "total_auc": 0.539512506301707,
+      "ctr_logloss": 0.6251999914984115,
+      "cvr_logloss": 0.34431022778781334
+    },
+    "gate_temperatures": [
+      [
+        1.256694564304241,
+        1.256694564304241
+      ],
+      [
+        1.256694564304241,
+        1.256694564304241
+      ],
+      [
+        1.256694564304241,
+        1.256694564304241
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.2139718383550644,
+        0.21496766805648804
+      ],
+      "utilization_matrix": [
+        [
+          0.21359294652938843,
+          0.21216043829917908,
+          0.2139718383550644,
+          0.17974567413330078,
+          0.18052910268306732
+        ],
+        [
+          0.21381676197052002,
+          0.21496766805648804,
+          0.21085228025913239,
+          0.18105867505073547,
+          0.17930464446544647
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 7,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "DEGRADING - CTR AUC trending down (slope=-0.000813)",
+        "cvr": "DEGRADING - CVR AUC trending down (slope=-0.001895)"
+      }
+    },
+    "learning_rate": 0.00013714331138868998,
+    "conflict_detector": {
+      "ema_cos_sim": 0.39967005665736255,
+      "ema_threshold": 0.3298191794156591,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 24,
+    "time_seconds": 57.7,
+    "train": {
+      "total_loss": 0.6508303726420683,
+      "ctr_loss": 0.5113927858717301,
+      "cvr_loss": 0.1820048509275212,
+      "mask_loss": 0.20822667619761298,
+      "load_balance_loss": 1.5892048386966482,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.40459951758384705,
+      "train_ctr_auc": 0.722269832250955,
+      "train_cvr_auc": 0.8857814264538904,
+      "task_weight_ctr": 0.934927761554718,
+      "task_weight_cvr": 1.3181936740875244,
+      "log_sigma_ctr": 0.03364299237728119,
+      "log_sigma_cvr": -0.13813117146492004
+    },
+    "val": {
+      "val_loss": 0.9429444193840026,
+      "ctr_auc": 0.5320251788275234,
+      "cvr_auc": 0.5510261163971747,
+      "total_auc": 0.5415256476123491,
+      "ctr_logloss": 0.6255970770056604,
+      "cvr_logloss": 0.3489777641276874
+    },
+    "gate_temperatures": [
+      [
+        1.2315606730181563,
+        1.2315606730181563
+      ],
+      [
+        1.2315606730181563,
+        1.2315606730181563
+      ],
+      [
+        1.2315606730181563,
+        1.2315606730181563
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.2140434831380844,
+        0.2159333974123001
+      ],
+      "utilization_matrix": [
+        [
+          0.2140434831380844,
+          0.21358467638492584,
+          0.21232718229293823,
+          0.17966818809509277,
+          0.18037642538547516
+        ],
+        [
+          0.2159333974123001,
+          0.214819073677063,
+          0.2106724977493286,
+          0.18026666343212128,
+          0.1783084124326706
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 8,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "DEGRADING - CTR AUC trending down (slope=-0.000765)",
+        "cvr": "DEGRADING - CVR AUC trending down (slope=-0.001405)"
+      }
+    },
+    "learning_rate": 0.00010453658778440108,
+    "conflict_detector": {
+      "ema_cos_sim": 0.40016300275001104,
+      "ema_threshold": 0.3322182861744817,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 25,
+    "time_seconds": 78.57,
+    "train": {
+      "total_loss": 0.6444804815685048,
+      "ctr_loss": 0.5093600546612459,
+      "cvr_loss": 0.17889204358353333,
+      "mask_loss": 0.20778081206714405,
+      "load_balance_loss": 1.6648772267734304,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.7645832002162933,
+      "train_ctr_auc": 0.7250688218543354,
+      "train_cvr_auc": 0.8905545036548428,
+      "task_weight_ctr": 0.9375080466270447,
+      "task_weight_cvr": 1.322822093963623,
+      "log_sigma_ctr": 0.03226495906710625,
+      "log_sigma_cvr": -0.13988368213176727
+    },
+    "val": {
+      "val_loss": 0.9447291791439056,
+      "ctr_auc": 0.5321744535958459,
+      "cvr_auc": 0.552512147568735,
+      "total_auc": 0.5423433005822904,
+      "ctr_logloss": 0.6268364194033629,
+      "cvr_logloss": 0.3497403550481433
+    },
+    "gate_temperatures": [
+      [
+        1.206929459557793,
+        1.206929459557793
+      ],
+      [
+        1.206929459557793,
+        1.206929459557793
+      ],
+      [
+        1.206929459557793,
+        1.206929459557793
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.21423576772212982,
+        0.21522556245326996
+      ],
+      "utilization_matrix": [
+        [
+          0.21404597163200378,
+          0.21423576772212982,
+          0.2125048190355301,
+          0.17941835522651672,
+          0.17979510128498077
+        ],
+        [
+          0.21522556245326996,
+          0.21456804871559143,
+          0.2138240784406662,
+          0.17894326150417328,
+          0.17743904888629913
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 9,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "DEGRADING - CTR AUC trending down (slope=-0.000185)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 7.631742512670285e-05,
+    "conflict_detector": {
+      "ema_cos_sim": 0.39676932765244716,
+      "ema_threshold": 0.3362943764542599,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 26,
+    "time_seconds": 43.83,
+    "train": {
+      "total_loss": 0.6417444642852335,
+      "ctr_loss": 0.5077404267647687,
+      "cvr_loss": 0.17857859309981852,
+      "mask_loss": 0.2074296658529955,
+      "load_balance_loss": 1.679817576969371,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.7767270505428314,
+      "train_ctr_auc": 0.7276077840558428,
+      "train_cvr_auc": 0.8912167232056363,
+      "task_weight_ctr": 0.9398084878921509,
+      "task_weight_cvr": 1.3267673254013062,
+      "log_sigma_ctr": 0.031039584428071976,
+      "log_sigma_cvr": -0.1413727104663849
+    },
+    "val": {
+      "val_loss": 0.953929215669632,
+      "ctr_auc": 0.5306516425335986,
+      "cvr_auc": 0.5483732440864191,
+      "total_auc": 0.5395124433100089,
+      "ctr_logloss": 0.6268493403986034,
+      "cvr_logloss": 0.35637774738789
+    },
+    "gate_temperatures": [
+      [
+        1.1827908703666372,
+        1.1827908703666372
+      ],
+      [
+        1.1827908703666372,
+        1.1827908703666372
+      ],
+      [
+        1.1827908703666372,
+        1.1827908703666372
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.21554560959339142,
+        0.2162255495786667
+      ],
+      "utilization_matrix": [
+        [
+          0.21554560959339142,
+          0.21379521489143372,
+          0.21205250918865204,
+          0.17897945642471313,
+          0.1796271651983261
+        ],
+        [
+          0.21505586802959442,
+          0.2162255495786667,
+          0.21303625404834747,
+          0.17840012907981873,
+          0.1772821545600891
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 10,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "DEGRADING - CTR AUC trending down (slope=-0.000241)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 5.279499846691252e-05,
+    "conflict_detector": {
+      "ema_cos_sim": 0.3952829546858014,
+      "ema_threshold": 0.3395856682150108,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 27,
+    "time_seconds": 93.65,
+    "train": {
+      "total_loss": 0.6354291845770443,
+      "ctr_loss": 0.5065976851126727,
+      "cvr_loss": 0.1757742084124509,
+      "mask_loss": 0.20730542400304008,
+      "load_balance_loss": 1.608165510962991,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.38412266969680786,
+      "train_ctr_auc": 0.7292360128995559,
+      "train_cvr_auc": 0.8954900812276825,
+      "task_weight_ctr": 0.9417806267738342,
+      "task_weight_cvr": 1.330212116241455,
+      "log_sigma_ctr": 0.029991453513503075,
+      "log_sigma_cvr": -0.1426692008972168
+    },
+    "val": {
+      "val_loss": 0.9586364924907684,
+      "ctr_auc": 0.5314488485996032,
+      "cvr_auc": 0.5497713488866837,
+      "total_auc": 0.5406100987431435,
+      "ctr_logloss": 0.6289445605135433,
+      "cvr_logloss": 0.35810089471241807
+    },
+    "gate_temperatures": [
+      [
+        1.1591350529593045,
+        1.1591350529593045
+      ],
+      [
+        1.1591350529593045,
+        1.1591350529593045
+      ],
+      [
+        1.1591350529593045,
+        1.1591350529593045
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.21358714997768402,
+        0.2175389677286148
+      ],
+      "utilization_matrix": [
+        [
+          0.21358714997768402,
+          0.2131822109222412,
+          0.21314384043216705,
+          0.1796000897884369,
+          0.18048669397830963
+        ],
+        [
+          0.2134828269481659,
+          0.2175389677286148,
+          0.21381749212741852,
+          0.17789968848228455,
+          0.17726102471351624
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 11,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "DEGRADING - CTR AUC trending down (slope=-0.000017)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 3.4227024433899005e-05,
+    "conflict_detector": {
+      "ema_cos_sim": 0.3941669261869021,
+      "ema_threshold": 0.3410150768153086,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 28,
+    "time_seconds": 59.19,
+    "train": {
+      "total_loss": 0.6332929730415344,
+      "ctr_loss": 0.5060067383682026,
+      "cvr_loss": 0.17482785845504087,
+      "mask_loss": 0.2071941745631835,
+      "load_balance_loss": 1.646602818545173,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.7875461578369141,
+      "train_ctr_auc": 0.7301249501347379,
+      "train_cvr_auc": 0.8968674537224156,
+      "task_weight_ctr": 0.9435164928436279,
+      "task_weight_cvr": 1.3332226276397705,
+      "log_sigma_ctr": 0.029070718213915825,
+      "log_sigma_cvr": -0.14379949867725372
+    },
+    "val": {
+      "val_loss": 0.9603364825248718,
+      "ctr_auc": 0.5311550470853852,
+      "cvr_auc": 0.5496347271677724,
+      "total_auc": 0.5403948871265788,
+      "ctr_logloss": 0.6291455607350861,
+      "cvr_logloss": 0.3590750036167146
+    },
+    "gate_temperatures": [
+      [
+        1.1359523519001185,
+        1.1359523519001185
+      ],
+      [
+        1.1359523519001185,
+        1.1359523519001185
+      ],
+      [
+        1.1359523519001185,
+        1.1359523519001185
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.21497812867164612,
+        0.21740815043449402
+      ],
+      "utilization_matrix": [
+        [
+          0.2140471488237381,
+          0.21497812867164612,
+          0.21307772397994995,
+          0.17936904728412628,
+          0.17852795124053955
+        ],
+        [
+          0.21424385905265808,
+          0.21740815043449402,
+          0.2136092334985733,
+          0.17867811024188995,
+          0.17606063187122345
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 12,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "DEGRADING - CTR AUC trending down (slope=-0.000247)",
+        "cvr": "OSCILLATING - CVR unstable (sign_changes=3, std=0.0014)"
+      }
+    },
+    "learning_rate": 2.0816937636766188e-05,
+    "conflict_detector": {
+      "ema_cos_sim": 0.3941557434297745,
+      "ema_threshold": 0.3435363253844269,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 29,
+    "time_seconds": 92.54,
+    "train": {
+      "total_loss": 0.6303125430555905,
+      "ctr_loss": 0.5050391428610858,
+      "cvr_loss": 0.1739426530459348,
+      "mask_loss": 0.2071066661792643,
+      "load_balance_loss": 1.6201450684491325,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.7351392507553101,
+      "train_ctr_auc": 0.7313030218443871,
+      "train_cvr_auc": 0.8982082185695333,
+      "task_weight_ctr": 0.945086658000946,
+      "task_weight_cvr": 1.3359227180480957,
+      "log_sigma_ctr": 0.02823931723833084,
+      "log_sigma_cvr": -0.14481112360954285
+    },
+    "val": {
+      "val_loss": 0.9622947692871093,
+      "ctr_auc": 0.5310374491503423,
+      "cvr_auc": 0.5489736124893793,
+      "total_auc": 0.5400055308198608,
+      "ctr_logloss": 0.6293951166237951,
+      "cvr_logloss": 0.36040831489644193
+    },
+    "gate_temperatures": [
+      [
+        1.1132333048621161,
+        1.1132333048621161
+      ],
+      [
+        1.1132333048621161,
+        1.1132333048621161
+      ],
+      [
+        1.1132333048621161,
+        1.1132333048621161
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.21477168798446655,
+        0.21708373725414276
+      ],
+      "utilization_matrix": [
+        [
+          0.21477168798446655,
+          0.21471036970615387,
+          0.21345429122447968,
+          0.17849794030189514,
+          0.17856568098068237
+        ],
+        [
+          0.21507927775382996,
+          0.21708373725414276,
+          0.21351516246795654,
+          0.17820897698402405,
+          0.17611286044120789
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 13,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "DEGRADING - CTR AUC trending down (slope=-0.000177)",
+        "cvr": "CONVERGED - CVR AUC stable"
+      }
+    },
+    "learning_rate": 1.2711661792704668e-05,
+    "conflict_detector": {
+      "ema_cos_sim": 0.38923459598905713,
+      "ema_threshold": 0.34533747077119636,
+      "conflict_ratio": 0.0
+    }
+  },
+  {
+    "epoch": 30,
+    "time_seconds": 93.23,
+    "train": {
+      "total_loss": 0.6301463035976186,
+      "ctr_loss": 0.5054163862677181,
+      "cvr_loss": 0.17407983874573427,
+      "mask_loss": 0.20712942428448622,
+      "load_balance_loss": 1.605017900466919,
+      "num_batches": 85,
+      "conflict_count": 0,
+      "avg_cos_sim": 0.40215516090393066,
+      "train_ctr_auc": 0.7306544847701959,
+      "train_cvr_auc": 0.8982725211023598,
+      "task_weight_ctr": 0.9465086460113525,
+      "task_weight_cvr": 1.3384227752685547,
+      "log_sigma_ctr": 0.027487579733133316,
+      "log_sigma_cvr": -0.14574596285820007
+    },
+    "val": {
+      "val_loss": 0.9650170207023621,
+      "ctr_auc": 0.5310185712351532,
+      "cvr_auc": 0.5490444716855085,
+      "total_auc": 0.5400315214603308,
+      "ctr_logloss": 0.6299128715943857,
+      "cvr_logloss": 0.36193945982322506
+    },
+    "gate_temperatures": [
+      [
+        1.0909686387648738,
+        1.0909686387648738
+      ],
+      [
+        1.0909686387648738,
+        1.0909686387648738
+      ],
+      [
+        1.0909686387648738,
+        1.0909686387648738
+      ]
+    ],
+    "expert_collapse": {
+      "collapsed": false,
+      "collapsed_tasks": [],
+      "max_utilization_per_task": [
+        0.2154054194688797,
+        0.21733354032039642
+      ],
+      "utilization_matrix": [
+        [
+          0.2154054194688797,
+          0.2145271748304367,
+          0.21327200531959534,
+          0.17841815948486328,
+          0.17837724089622498
+        ],
+        [
+          0.2159024178981781,
+          0.21733354032039642,
+          0.21302995085716248,
+          0.17779332399368286,
+          0.17594078183174133
+        ]
+      ]
+    },
+    "early_stopping": {
+      "should_stop": false,
+      "best_score": 0.5455047058242033,
+      "best_epoch": 15,
+      "patience_counter": 14,
+      "effective_patience": 15,
+      "diagnosis": {
+        "ctr": "CONVERGED - CTR AUC stable (delta < 0.001)",
         "cvr": "CONVERGED - CVR AUC stable"
       }
     },
     "learning_rate": 1e-05,
     "conflict_detector": {
-      "ema_cos_sim": 0.06369615972042084,
-      "ema_threshold": -0.1,
+      "ema_cos_sim": 0.3905266524805445,
+      "ema_threshold": 0.3463391858448594,
       "conflict_ratio": 0.0
     }
   }

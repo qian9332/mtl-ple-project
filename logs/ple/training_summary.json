@@ -1,51 +1,55 @@
 {
   "model": "PLEModel",
-  "total_epochs": 10,
-  "best_epoch": 9,
+  "total_epochs": 30,
+  "best_epoch": 16,
   "best_val_metrics": {
-    "val_loss": 0.8596928715705872,
-    "ctr_auc": 0.5034507176381883,
-    "cvr_auc": 0.5021045000037371,
-    "total_auc": 0.5027776088209627,
-    "ctr_logloss": 0.5933230090456267,
-    "cvr_logloss": 0.2725812064598129
+    "val_loss": 0.8620871841907501,
+    "ctr_auc": 0.5335952021905686,
+    "cvr_auc": 0.557414209457838,
+    "total_auc": 0.5455047058242033,
+    "ctr_logloss": 0.6023193686504773,
+    "cvr_logloss": 0.30089276677982874
   },
   "best_train_metrics": {
-    "total_loss": 0.8714248397771049,
-    "ctr_loss": 0.5641745118533864,
-    "cvr_loss": 0.2539549224516925,
-    "mask_loss": 0.5729768942384159,
-    "load_balance_loss": 0.1829492572475882,
-    "num_batches": 17,
+    "total_loss": 0.7363996940500596,
+    "ctr_loss": 0.5397005165324492,
+    "cvr_loss": 0.21833130629623637,
+    "mask_loss": 0.22028741503463073,
+    "load_balance_loss": 1.3835239985409904,
+    "num_batches": 85,
     "conflict_count": 0,
-    "avg_cos_sim": 0.0,
-    "train_ctr_auc": 0.6134701512108168,
-    "train_cvr_auc": 0.6856318585833778,
-    "task_weight_ctr": 0.9849965572357178,
-    "task_weight_cvr": 1.0208408832550049,
-    "log_sigma_ctr": 0.007558558601886034,
-    "log_sigma_cvr": -0.010313316248357296
+    "avg_cos_sim": 0.7927908897399902,
+    "train_ctr_auc": 0.6773931065555893,
+    "train_cvr_auc": 0.8099621736995396,
+    "task_weight_ctr": 0.907789945602417,
+    "task_weight_cvr": 1.251438021659851,
+    "log_sigma_ctr": 0.04837113618850708,
+    "log_sigma_cvr": -0.11214666813611984
   },
   "final_gate_temperatures": [
     [
-      1.1974738784767571,
-      1.1974738784767571
+      1.0909686387648738,
+      1.0909686387648738
     ],
     [
-      1.1974738784767571,
-      1.1974738784767571
+      1.0909686387648738,
+      1.0909686387648738
+    ],
+    [
+      1.0909686387648738,
+      1.0909686387648738
     ]
   ],
   "frozen_uncertainty_weights": [
-    0.9847319722175598,
-    1.0212796926498413
+    0.9465086460113525,
+    1.3384227752685547
   ],
   "conflict_summary": {
     "final_conflict_ratio": 0.0,
-    "final_ema_cos_sim": 0.06369615972042084
+    "final_ema_cos_sim": 0.3905266524805445
   },
   "convergence_diagnosis": {
-    "ctr": "IMPROVING - CTR AUC trending up (slope=0.000723)",
+    "ctr": "CONVERGED - CTR AUC stable (delta < 0.001)",
     "cvr": "CONVERGED - CVR AUC stable"
   }
 }
